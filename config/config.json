@@ -1,14 +1,10 @@
 {
   "development": {
     "dialect": "mysql",
-<<<<<<< HEAD
     "use_env_variable":"LOCALDB_URL", 
     "username": "LOCALDB_USERNAME", 
     "password": "LOCALDB_PASSWORD", 
     "host": "LOCALDB_HOST"   
-=======
-    "use_env_variable": "LOCALDB_URL"
->>>>>>> master
   },
   "test": {
     "username": "root",
@@ -19,13 +15,6 @@
   },
   "production": {
     "dialect": "mysql",
-<<<<<<< HEAD
-    "use_env_variable":"JAWSDB_URL"    
-  }
-}
-    
-=======
     "use_env_variable": "JAWSDB_URL"
   }
 }
->>>>>>> master
