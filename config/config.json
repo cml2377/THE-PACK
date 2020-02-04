@@ -1,7 +1,7 @@
 {
   "development": {
     "dialect": "mysql",
-    "use_env_variable":"LOCALDB_URL"
+    "use_env_variable": "LOCALDB_URL"
   },
   "test": {
     "username": "root",
@@ -12,7 +12,6 @@
   },
   "production": {
     "dialect": "mysql",
-    "use_env_variable":"JAWSDB_URL"
-    
+    "use_env_variable": "JAWSDB_URL"
   }
 }
