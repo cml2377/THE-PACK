@@ -5,6 +5,7 @@
     "username": "LOCALDB_USERNAME",
     "password": "LOCALDB_PASSWORD",
     "host": "LOCALDB_HOST"
+
   },
   "test": {
     "username": "root",
@@ -15,6 +16,7 @@
   },
   "production": {
     "dialect": "mysql",
-    "use_env_variable": "JAWSDB_URL"
+    "use_env_variable":"JAWSDB_URL"    
   }
 }
+
