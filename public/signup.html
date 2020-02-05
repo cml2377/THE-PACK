@@ -2,47 +2,83 @@
 <html lang="en">
 
 <head>
-  <title>Passport Authentication</title>
+  <title>Login - Hogs N Cars</title>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootswatch/3.3.7/lumen/bootstrap.min.css">
-  <link href="stylesheets/style.css" rel="stylesheet">
+  <link rel="icon" href="./img/noun_Flying Pig.png">
+  <!-- CSS FILES -->
+  <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/uikit@latest/dist/css/uikit.min.css">
 </head>
 
-<body>
-  <nav class="navbar navbar-default">
-    <div class="container-fluid">
-      <div class="navbar-header">
-      </div>
-    </div>
-  </nav>
-  <div class="container">
-    <div class="row">
-      <div class="col-md-6 col-md-offset-3">
-        <h2>Sign Up Form</h2>
-        <form class="signup">
-          <div class="form-group">
-            <label for="exampleInputEmail1">Email address</label>
-            <input type="email" class="form-control" id="email-input" placeholder="Email">
-          </div>
-          <div class="form-group">
-            <label for="exampleInputPassword1">Password</label>
-            <input type="password" class="form-control" id="password-input" placeholder="Password">
-          </div>
-          <div style="display: none" id="alert" class="alert alert-danger" role="alert">
-            <span class="glyphicon glyphicon-exclamation-sign" aria-hidden="true"></span>
-            <span class="sr-only">Error:</span> <span class="msg"></span>
-          </div>
-          <button type="submit" class="btn btn-default">Sign Up</button>
-        </form>
-        <br />
-        <p>Or log in <a href="/login">here</a></p>
-      </div>
-    </div>
+<body
+  class="login uk-cover-container uk-background-secondary uk-flex uk-flex-center uk-flex-middle uk-height-viewport uk-overflow-hidden uk-light"
+  data-uk-height-viewport="" data-gr-c-s-loaded="true" cz-shortcut-listen="true" style="min-height: calc(100vh);">
+  <!-- overlay -->
+  <div class="uk-position-cover uk-overlay-primary"
+    style="background-image: url(&quot;./img/nathan-trampe-cyIERGMF_1U-unsplash.jpg&quot;); background-repeat: no-repeat; background-size: cover; background-position: center;">
   </div>
+  <!-- End of overlay -->
+  <!-- Footer -->
+  <div class="uk-position-bottom-center uk-position-small uk-visible@m uk-position-z-index">
+    <span class="uk-text-small uk-text-muted">© 2020 THE PACK <a href="https://github.com/cml2377/THE-PACK">Created
+        by Crystal Ly, Brianna McCray, Joshua Kuruvilla, Harrison Thomas</a> | Built with <a href="http://getuikit.com"
+        title="" target="_blank" data-uk-tooltip="" aria-expanded="false"><span data-uk-icon="uikit"
+          class="uk-icon"><svg width="20" height="20" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"
+            data-svg="uikit">
+            <polygon
+              points="14.4,3.1 11.3,5.1 15,7.3 15,12.9 10,15.7 5,12.9 5,8.5 2,6.8 2,14.8 9.9,19.5 18,14.8 18,5.3">
+            </polygon>
+            <polygon points="9.8,4.2 6.7,2.4 9.8,0.4 12.9,2.3"></polygon>
+          </svg></span></a></span>
+  </div>
+  <!-- Signup div -->
+  <div class="uk-width-medium uk-padding-small uk-position-z-index uk-scrollspy-inview uk-animation-fade"
+    style="background-color: rgb(32,32,32, 0.8); padding: 20px;" uk-scrollspy="cls: uk-animation-fade">
+    <!-- Piggy logo -->
+    <div class="uk-text-center uk-margin">
+      <img src="./img/noun_Flying Pig.png" alt="Logo">
+    </div>
 
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-  <script type="text/javascript" src="js/signup.js"></script>
+    <!-- Sign Up -->
+    <form class="toggle-class signup" action="members.html">
+      <fieldset class="uk-fieldset">
+        <div class="uk-margin-small">
+          <div class="uk-inline uk-width-1-1">
+            <span class="uk-form-icon uk-form-icon-flip uk-icon" data-uk-icon="icon: user"><svg width="20" height="20"
+                viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg" data-svg="user">
+                <circle fill="none" stroke="#000" stroke-width="1.1" cx="9.9" cy="6.4" r="4.4"></circle>
+                <path fill="none" stroke="#000" stroke-width="1.1"
+                  d="M1.5,19 C2.3,14.5 5.8,11.2 10,11.2 C14.2,11.2 17.7,14.6 18.5,19.2"></path>
+              </svg></span>
+            <input id="email-input" class="uk-input uk-border-pill" required="" placeholder="Email address" type="email"
+              autocomplete="off"
+              style="background-image: url(&quot;data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAASCAYAAABSO15qAAAAAXNSR0IArs4c6QAAAPhJREFUOBHlU70KgzAQPlMhEvoQTg6OPoOjT+JWOnRqkUKHgqWP4OQbOPokTk6OTkVULNSLVc62oJmbIdzd95NcuGjX2/3YVI/Ts+t0WLE2ut5xsQ0O+90F6UxFjAI8qNcEGONia08e6MNONYwCS7EQAizLmtGUDEzTBNd1fxsYhjEBnHPQNG3KKTYV34F8ec/zwHEciOMYyrIE3/ehKAqIoggo9inGXKmFXwbyBkmSQJqmUNe15IRhCG3byphitm1/eUzDM4qR0TTNjEixGdAnSi3keS5vSk2UDKqqgizLqB4YzvassiKhGtZ/jDMtLOnHz7TE+yf8BaDZXA509yeBAAAAAElFTkSuQmCC&quot;); background-repeat: no-repeat; background-attachment: scroll; background-size: 16px 18px; background-position: 98% 50%; cursor: auto;">
+          </div>
+        </div>
+        <div class="uk-margin-small">
+          <div class="uk-inline uk-width-1-1">
+            <span class="uk-form-icon uk-form-icon-flip uk-icon" data-uk-icon="icon: lock"><svg width="20" height="20"
+                viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg" data-svg="lock">
+                <rect fill="none" stroke="#000" height="10" width="13" y="8.5" x="3.5"></rect>
+                <path fill="none" stroke="#000"
+                  d="M6.5,8 L6.5,4.88 C6.5,3.01 8.07,1.5 10,1.5 C11.93,1.5 13.5,3.01 13.5,4.88 L13.5,8">
+                </path>
+              </svg></span>
+            <input id="password-input" class="uk-input uk-border-pill" required="" placeholder="Password"
+              type="password" autocomplete="off"
+              style="background-image: url(&quot;data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAASCAYAAABSO15qAAAAAXNSR0IArs4c6QAAAPhJREFUOBHlU70KgzAQPlMhEvoQTg6OPoOjT+JWOnRqkUKHgqWP4OQbOPokTk6OTkVULNSLVc62oJmbIdzd95NcuGjX2/3YVI/Ts+t0WLE2ut5xsQ0O+90F6UxFjAI8qNcEGONia08e6MNONYwCS7EQAizLmtGUDEzTBNd1fxsYhjEBnHPQNG3KKTYV34F8ec/zwHEciOMYyrIE3/ehKAqIoggo9inGXKmFXwbyBkmSQJqmUNe15IRhCG3byphitm1/eUzDM4qR0TTNjEixGdAnSi3keS5vSk2UDKqqgizLqB4YzvassiKhGtZ/jDMtLOnHz7TE+yf8BaDZXA509yeBAAAAAElFTkSuQmCC&quot;); background-repeat: no-repeat; background-attachment: scroll; background-size: 16px 18px; background-position: 98% 50%; cursor: auto;">
+          </div>
+        </div>
+        <div class="uk-margin-bottom">
+          <button type="submit" class="uk-button uk-button-primary uk-border-pill uk-width-1-1">SIGN UP</button>
+          <p>Or log in <a href="login.html">here</a></p>
+        </div>
+      </fieldset>
+    </form>
+    <!-- End of div -->
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script type="text/javascript" src="js/signup.js"></script>
 
 </body>
 
