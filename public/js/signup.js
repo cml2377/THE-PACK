@@ -39,4 +39,13 @@ $(document).ready(function () {
 		$("#alert .msg").text(err.responseJSON);
 		$("#alert").fadeIn(500);
 	}
+
+	// Function that toggles background image of application.
+	function toggleBackgroundImage() {
+		$(".slider").click(function () {
+			var imageURL = "../img/nathan-trampe-cyIERGMF_1U-unsplash.jpg";
+			$(".backgroundImg").css("background-image", "url(" + imageURL + ")");
+		});
+	}
+	toggleBackgroundImage();
 });
