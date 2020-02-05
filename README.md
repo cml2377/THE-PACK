@@ -1,6 +1,6 @@
-# THE-PACK's Colossal Vehicle Event Finder!
+# THE-PACK's Colossal Hog Maintanence and Event Finder!
 
-This application draws from public information to find hog and car events
+This application draws from public information to find hog and car events, as well as keep track of your favorite hogs and list of parts.
 
 ## Getting Started
 
@@ -10,9 +10,8 @@ User story here.
 
 ## How to use THE PACK's 
 
-Create an account or log in using social media.
+Create an account or log in with Google.
 
-Input City OR Zip code for weather.
 <img src="./public/img/screenshot.png" width="100%" height="auto">
 
 
@@ -25,16 +24,11 @@ Please keep in mind:
 
 ## Built With
 
-* [Google Maps](https://www.google.com/maps) - We draw from Google's API to grab locations and map area.
-* [Weather](https://openweathermap.org/) - We draw from Open Weather Map to grab current and future weather of the location you select.
-* [Weather Icons](https://github.com/erikflowers/weather-icons/) - We used Erik Flowers' beautiful weather icons.
-* [USA Data](https://www.data.gov/) - We used US Federal govt. open data to pull public land locations.
-* [Bulma](https://bulma.io/documentation/) - We used Bulma CSS framework. 
+* [Eventbrite](https://www.eventbrite.com/platform/api) - We used Eventbrite to find vehicle events.
+* [UI Kit](https://getuikit.com/docs/introduction) - We used UIkit CSS framework. 
 * [Unsplash](https://unsplash.com/t/animals) - We used copyright-free images from this site.
-* [FontAwesome](https://fontawesome.com/) - We used the dog icon.
-* [Google Fonts](https://fonts.google.com/) - We used 1 font style from Google Fonts.
-* [Moment](https://momentjs.com/) - We used Moment to grab current date and forecast dates.
-* [Hiking](https://www.hikingproject.com/data) - We used Hiking Project's API to grab trails based on geolocation.
+* [Vehicle Parts](https://vpic.nhtsa.dot.gov/api/) - We used National Highway Traffic Safety Administration's API to grab parts for a searched vehicle.
+Our Flying Pig Icon was created by Amelia Edwards from the Noun Project.
 
 ## Contributing
 

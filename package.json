@@ -1,5 +1,5 @@
 {
-  "name": "1-Passport-Example",
+  "name": "thepackproject",
   "version": "1.0.0",
   "description": "",
   "main": "server.js",
@@ -10,7 +10,7 @@
     "test": "npm run lint"
   },
   "keywords": [],
-  "author": "",
+  "author": "Brianna McCray, Crystal Ly, Josh Kuruvilla, Harrison Thomas",
   "license": "ISC",
   "dependencies": {
     "bcryptjs": "2.4.3",
