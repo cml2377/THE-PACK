@@ -15,7 +15,6 @@
 
   <div class="uk-container">
     <!-- We can use a modal to have the user sign-up or sign-in. https://getuikit.com/docs/modal -->
-    <button uk-toggle="target: #my-id" type="button"></button>
 
     <!-- This is the modal -->
     <div id="my-id" uk-modal>
@@ -30,14 +29,15 @@
     <!-- We may have to add the background image to the html to add the markers. https://getuikit.com/docs/marker -->
 
     <!-- Example from UI Kit. -->
-    <div>
-      <div class="uk-inline uk-light">
-        <img src="../public/img/jason-wong-klTmVupvGVk-unsplash.jpg" alt="image of motorcycle">
+    <div class="uk-inline uk-background-cover uk-light">
+      <div class="backgroundImg">
+        <img src="./img/jason-wong-klTmVupvGVk-unsplash.jpg" alt="image of vehicle">
         <!-- For these markers, we hide the div that contains the information the user is looking for. https://getuikit.com/docs/visibility -->
         <a class="uk-position-absolute uk-transform-center" style="left: 20%; top: 30%" href="#" uk-marker></a>
         <a class="uk-position-absolute uk-transform-center" style="left: 60%; top: 40%" href="#" uk-marker></a>
         <a class="uk-position-absolute uk-transform-center" style="left: 80%; top: 70%" href="#" uk-marker></a>
       </div>
+
     </div>
     <!-- ================================================================================================================================ -->
 
@@ -47,7 +47,11 @@
     <!-- ================================================================================================================================ -->
     <!-- Unsure how this will work for now; I am pretty sure there was a toggle class activity at the beginning of the class. -->
     <div id="toggleImg">
-
+      <!-- Rounded switch -->
+      <label class="switch">
+        <input type="checkbox">
+        <span class="slider round"></span>
+      </label>
     </div>
 
     <!-- We can add a notification that fades away when user adds a favorite event or vehicle. https://getuikit.com/docs/notification -->
@@ -55,6 +59,7 @@
 
   </div>
 
+  <!--JQuery JS-->
   <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
   <!--Google Sign-in-->
   <script src="https://apis.google.com/js/platform.js" async defer></script>

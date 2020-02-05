@@ -13,7 +13,7 @@ User story here.
 Create an account or log in using social media.
 
 Input City OR Zip code for weather.
-<img src="assets/images/file.png" width="100%" height="auto">
+<img src="./public/img/screenshot.png" width="100%" height="auto">
 
 
 ## How Colossal Hog works
