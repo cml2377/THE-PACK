@@ -4,7 +4,8 @@ module.exports = function (sequelize, DataTypes) {
 		oilChanges: DataTypes.STRING,
 		windshieldFluid: DataTypes.STRING,
 		airFilters: DataTypes.STRING,
-		sparkPlugs: DataTypes.STRING
+		sparkPlugs: DataTypes.STRING,
+		vehicle_id: DataTypes.INTEGER
 	});
 	return Parts;
 };
