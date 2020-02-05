@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Image with Marker</title>
+    <link rel="stylesheet" href="css/zoom-marker.css">
+    <style>
+            .container{
+                width: 800px;
+                margin: 30px auto;
+            }
+            img{
+                width: 600px;;
+            }
+    </style>
+</head>
+<body>
+    <div class="container">
+<img src="/public/img/nathan-trampe-cyIERGMF_1U-unsplash.jpg" name="viewArea" id="viewArea" draggable="false">
+    </div>
+<script src="js/jquery.min.js"></script>
+<script src="js/jquery.mousewheel.min.js"></script>
+<script src="js/zoom-marker.min.js"></script>
+<script>
+$("#viewArea").zoomMarker({
+    src: "/public/img/nathan-trampe-cyIERGMF_1U-unsplash.jpg",
+    rate: 0.2,
+    markers: [
+        {
+            src: "/public/img/nathan-trampe-cyIERGMF_1U-unsplash.jpg",
+            x: 855,
+            y: 300,
+            size: 40,
+            click: function(obj){
+                alert("This is my car!");
+            }
+        },
+        {
+            src: "/public/img/nathan-trampe-cyIERGMF_1U-unsplash.jpg",
+            x: 120,
+            y: 280,
+            size: 30,
+            click: function(obj){
+                alert("I love you!");
+            }
+        }
+    ]
+})
+</script>
+
+
+</body>
+</html>

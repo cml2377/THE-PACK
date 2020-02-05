@@ -83,6 +83,15 @@ input:checked + .slider:before {
   border-radius: 50%;
 }
 
+<<<<<<< HEAD
+.backgroundImg {
+  max-width: 100%;
+  max-height: 100%;
+  float: left;
+}
+
+/* ==================================================================================================================== */
+=======
 /* ==================================================================================================================== */
 .modal {
   display: none; /* Hidden by default */
@@ -120,3 +129,4 @@ input:checked + .slider:before {
   text-decoration: none;
   cursor: pointer;
 }
+>>>>>>> origin/briannabranch
