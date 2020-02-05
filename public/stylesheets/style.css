@@ -21,10 +21,14 @@ body {
 
 .uk-animation-reverse {
   background-image: url("../img/jason-wong-klTmVupvGVk-unsplash.jpg");
+  background-size: cover;
+  background-position: center;
 }
 
 .uk-animation-reverse.active{
   background-image: url("../img/nathan-trampe-cyIERGMF_1U-unsplash.jpg");
+  background-size: cover;
+  background-position: center;
 }
 
 /* ========================================== Toggle CSS ======================================================== */
