@@ -1,0 +1,2 @@
+DROP DATABASE IF EXISTS thepackdb;
+CREATE DATABASE thepackdb;
