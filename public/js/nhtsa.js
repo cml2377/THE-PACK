@@ -160,10 +160,12 @@
 // })
 
 const year;//get this from the front end 
-
+// select1 = ({ year });
 const make;
-
+// select2 = ({ make });
 const model;
+// select3 = ({ model });
+
 
 
 $.ajax({
