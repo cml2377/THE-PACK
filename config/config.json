@@ -1,10 +1,7 @@
 {
   "development": {
     "dialect": "mysql",
-    "use_env_variable": "LOCALDB_URL",
-    "username": "LOCALDB_USERNAME",
-    "password": "LOCALDB_PASSWORD",
-    "host": "LOCALDB_HOST"
+    "use_env_variable": "LOCALDB_URL"
   },
   "test": {
     "username": "root",
