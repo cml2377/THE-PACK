@@ -6,6 +6,6 @@ $(document).ready(function () {
 	});
 
 	$(".slider").click(function () {
-		$(".uk-animation-reverse").toggleClass("active");
+		$("#backgroundImageInDiv").toggleClass("active");
 	});
 });
