@@ -12,8 +12,46 @@
 
 <body>
 
-  <div class="container">
-    <div class="g-signin2" data-onsuccess="onSignIn"></div>
+
+  <div class="uk-container">
+    <!-- We can use a modal to have the user sign-up or sign-in. https://getuikit.com/docs/modal -->
+    <button uk-toggle="target: #my-id" type="button"></button>
+
+    <!-- This is the modal -->
+    <div id="my-id" uk-modal>
+      <div class="uk-modal-dialog uk-margin-auto-vertical uk-modal-body">
+        <h2 class="uk-modal-title">Example</h2>
+        <button class="uk-modal-close" type="button"></button>
+      </div>
+    </div>
+
+    <!-- ================================================================================================================================ -->
+
+    <!-- We may have to add the background image to the html to add the markers. https://getuikit.com/docs/marker -->
+
+    <!-- Example from UI Kit. -->
+    <div>
+      <div class="uk-inline uk-light">
+        <img src="../public/img/jason-wong-klTmVupvGVk-unsplash.jpg" alt="image of motorcycle">
+        <!-- For these markers, we hide the div that contains the information the user is looking for. https://getuikit.com/docs/visibility -->
+        <a class="uk-position-absolute uk-transform-center" style="left: 20%; top: 30%" href="#" uk-marker></a>
+        <a class="uk-position-absolute uk-transform-center" style="left: 60%; top: 40%" href="#" uk-marker></a>
+        <a class="uk-position-absolute uk-transform-center" style="left: 80%; top: 70%" href="#" uk-marker></a>
+      </div>
+    </div>
+    <!-- ================================================================================================================================ -->
+
+    <!-- We can have divs that are columns? That hide/toggle based on above uk-markers -->
+
+
+    <!-- ================================================================================================================================ -->
+    <!-- Unsure how this will work for now; I am pretty sure there was a toggle class activity at the beginning of the class. -->
+    <div id="toggleImg">
+
+    </div>
+
+    <!-- We can add a notification that fades away when user adds a favorite event or vehicle. https://getuikit.com/docs/notification -->
+
 
   </div>
 
