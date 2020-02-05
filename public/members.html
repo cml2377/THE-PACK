@@ -20,120 +20,110 @@
 
     <!-- Example from UI Kit. -->
     <div class="uk-inline uk-background-cover uk-light">
-      <div class="backgroundImg">
-        <img class="uk-animation-reverse" src="./img/jason-wong-klTmVupvGVk-unsplash.jpg" alt="image of vehicle">
-        <!-- For these markers, we use modals that contain the information the user is looking for. https://getuikit.com/docs/visibility -->
-        <!-- Each marker will display information about its contents upon hover. class="uk-button uk-button-default" uk-tooltip="title: Hello World; pos: bottom-right"-->
-        <a class="uk-position-absolute uk-transform-center" style="left: 20%; top: 30%" uk-toggle="target: #modal-left"
-          uk-marker uk-tooltip="title: Save Favorite Car/Hog Here; pos: top-left"></a>
-        <a class="uk-position-absolute uk-transform-center" style="left: 60%; top: 40%"
-          uk-toggle="target: #modal-center" uk-marker uk-tooltip="title: Hog n' Car Events!; pos: top"></a>
-        <a class="uk-position-absolute uk-transform-center" style="left: 80%; top: 70%" uk-toggle="target: #modal-right"
-          uk-marker uk-tooltip="title: Find Parts; pos: top-left"></a>
-      </div>
-
-    </div>
-    <!-- ================================================================================================================================ -->
-
-    <!-- We can have modals for the uk-markers. -->
-    <!-- Save favorite Vehicle in this modal. -->
-    <div id="modal-left" class="uk-flex-top" uk-modal>
-      <div class="uk-modal-dialog uk-modal-body uk-margin-auto-vertical">
-
-        <button id="btn-left" class="uk-modal-close-default" type="button" uk-close></button>
-        <div class="uk-modal-header">
-          <h2 class="uk-modal-title">Save your favorite vehicles here</h2>
+      <div class="contentBox">
+        <div id="backgroundImageInDiv" style="height: 100vh; width: 100vh;" class="uk-animation-reverse">
+          <!-- For these markers, we use modals that contain the information the user is looking for. https://getuikit.com/docs/visibility -->
+          <!-- Each marker will display information about its contents upon hover. class="uk-button uk-button-default" uk-tooltip="title: Hello World; pos: bottom-right"-->
+          <a class="uk-position-absolute uk-transform-center" style="left: 20%; top: 30%"
+            uk-toggle="target: #modal-left" uk-marker uk-tooltip="title: Save Favorite Car/Hog Here; pos: top-left"></a>
+          <a class="uk-position-absolute uk-transform-center" style="left: 60%; top: 40%"
+            uk-toggle="target: #modal-center" uk-marker uk-tooltip="title: Hog n' Car Events!; pos: top"></a>
+          <a class="uk-position-absolute uk-transform-center" style="left: 80%; top: 70%"
+            uk-toggle="target: #modal-right" uk-marker uk-tooltip="title: Find Parts; pos: top-left"></a>
         </div>
-        <!-- References Vehicles table (local database) -->
-        <form class="uk-form-stacked">
-
-          <div class="uk-margin">
-            <div class="uk-form-label">Vehicle Type</div>
-            <div class="uk-form-controls">
-              <label><input class="uk-radio" type="radio" name="radio1">Car</label><br>
-              <label><input class="uk-radio" type="radio" name="radio1">Motorcycle</label>
-            </div>
-          </div>
-          <div class="uk-margin">
-            <label class="uk-form-label" for="form-stacked-text">Make</label>
-            <div class="uk-form-controls">
-              <input class="uk-input" id="form-stacked-text" type="text" placeholder="Ford, Yamaha...">
-            </div>
-          </div>
-
-          <div class="uk-margin">
-            <label class="uk-form-label" for="form-stacked-text">Model</label>
-            <div class="uk-form-controls">
-              <input class="uk-input" id="form-stacked-text" type="text" placeholder="Mustang, Bolt...">
-            </div>
-          </div>
-        </form>
-
-      </div>
-    </div>
-
-    <!-- Eventbrite Search (outside API) -->
-    <div id="modal-center" class="uk-flex-top" uk-modal>
-      <div class="uk-modal-dialog uk-modal-body uk-margin-auto-vertical">
-
-        <button class="uk-modal-close-default" type="button" uk-close></button>
-        <div class="uk-modal-header">
-          <h2 class="uk-modal-title">Find auto events near you</h2>
+        <!-- Toggles between car and motorcycle. -->
+        <div id="toggleImg">
+          <!-- Rounded switch -->
+          <label class="switch" uk-tooltip="title: Toggle between cars and hogs; pos: top-right">
+            <input type="checkbox">
+            <span class="slider round"></span>
+          </label>
         </div>
-        <!-- Search function -->
-        <div class="uk-margin">
-          <form class="uk-search uk-search-default">
-            <span class="uk-search-icon-flip" uk-search-icon></span>
-            <input class="uk-search-input" type="search" placeholder="Search by location...">
+      </div>
+      <!-- ================================================================================================================================ -->
+
+      <!-- We can have modals for the uk-markers. -->
+      <!-- Save favorite Vehicle in this modal. -->
+      <div id="modal-left" class="uk-flex-top" uk-modal>
+        <div class="uk-modal-dialog uk-modal-body uk-margin-auto-vertical">
+
+          <button id="btn-left" class="uk-modal-close-default" type="button" uk-close></button>
+          <div class="uk-modal-header">
+            <h2 class="uk-modal-title">Save your favorite vehicles here</h2>
+          </div>
+          <!-- References Vehicles table (local database) -->
+          <form class="uk-form-stacked">
+
+            <div class="uk-margin">
+              <div class="uk-form-label">Vehicle Type</div>
+              <div class="uk-form-controls">
+                <label><input class="uk-radio" type="radio" name="radio1">Car</label><br>
+                <label><input class="uk-radio" type="radio" name="radio1">Motorcycle</label>
+              </div>
+            </div>
+            <div class="uk-margin">
+              <label class="uk-form-label" for="form-stacked-text">Make</label>
+              <div class="uk-form-controls">
+                <input class="uk-input" id="form-stacked-text" type="text" placeholder="Ford, Yamaha...">
+              </div>
+            </div>
+
+            <div class="uk-margin">
+              <label class="uk-form-label" for="form-stacked-text">Model</label>
+              <div class="uk-form-controls">
+                <input class="uk-input" id="form-stacked-text" type="text" placeholder="Mustang, Bolt...">
+              </div>
+            </div>
           </form>
+          <!-- We can add a notification that fades away when user adds a favorite event or vehicle. https://getuikit.com/docs/notification -->
+          <button class="uk-button uk-button-default demo" type="button"
+            onclick="UIkit.notification({message: '<span uk-icon=\'icon: check\'></span> Vehicle added to list!'})">Submit</button>
         </div>
-
       </div>
-    </div>
 
-    <!-- Find car parts here -->
-    <div id="modal-right" class="uk-flex-top" uk-modal>
-      <div class="uk-modal-dialog uk-modal-body uk-margin-auto-vertical">
+      <!-- Eventbrite Search (outside API) -->
+      <div id="modal-center" class="uk-flex-top" uk-modal>
+        <div class="uk-modal-dialog uk-modal-body uk-margin-auto-vertical">
 
-        <button class="uk-modal-close-default" type="button" uk-close></button>
-        <div class="uk-modal-header">
-          <h2 class="uk-modal-title">Find and log car parts</h2>
+          <button class="uk-modal-close-default" type="button" uk-close></button>
+          <div class="uk-modal-header">
+            <h2 class="uk-modal-title">Find auto events near you</h2>
+          </div>
+          <!-- Search function -->
+          <div class="uk-margin">
+            <form class="uk-search uk-search-default">
+              <span class="uk-search-icon-flip" uk-search-icon></span>
+              <input class="uk-search-input" type="search" placeholder="Search by location...">
+            </form>
+          </div>
+          <button class="uk-button uk-button-default demo" type="button"
+            onclick="UIkit.notification({message: '<span uk-icon=\'icon: check\'></span> Added event to list!'})">Submit</button>
         </div>
-
-        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore
-          magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
-          consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla
-          pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id
-          est laborum.</p>
-
       </div>
+
+      <!-- Find car parts here -->
+      <div id="modal-right" class="uk-flex-top" uk-modal>
+        <div class="uk-modal-dialog uk-modal-body uk-margin-auto-vertical">
+
+          <button class="uk-modal-close-default" type="button" uk-close></button>
+          <div class="uk-modal-header">
+            <h2 class="uk-modal-title">Find and log car parts</h2>
+          </div>
+
+          <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et
+            dolore
+            magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea
+            commodo
+            consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla
+            pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id
+            est laborum.</p>
+          <button class="uk-button uk-button-default demo" type="button"
+            onclick="UIkit.notification({message: '<span uk-icon=\'icon: check\'></span> Added parts to list!'})">Submit</button>
+        </div>
+      </div>
+      <!-- ================================================================================================================================ -->
     </div>
-
-    <!-- ================================================================================================================================ -->
-    <!-- Unsure how this will work for now; I am pretty sure there was a toggle class activity at the beginning of the class. -->
-    <div id="toggleImg">
-      <!-- Rounded switch -->
-      <label class="switch" uk-tooltip="title: Toggle between cars and hogs; pos: top-right">
-        <input type="checkbox">
-        <span class="slider round"></span>
-      </label>
-    </div>
-
-    <!-- We can add a notification that fades away when user adds a favorite event or vehicle. https://getuikit.com/docs/notification -->
-    <button class="uk-button uk-button-default demo" type="button"
-      onclick="UIkit.notification({message: '<span uk-icon=\'icon: check\'></span> Message with an icon'})">Vehicle
-      added to list!</button>
-
-    <button class="uk-button uk-button-default demo" type="button"
-      onclick="UIkit.notification({message: '<span uk-icon=\'icon: check\'></span> Message with an icon'})">Added parts
-      to list!</button>
-
-    <button class="uk-button uk-button-default demo" type="button"
-      onclick="UIkit.notification({message: '<span uk-icon=\'icon: check\'></span> Message with an icon'})">Added event
-      to list!</button>
-
   </div>
-
   <!--JQuery JS-->
   <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
   <!--Google Sign-in-->
