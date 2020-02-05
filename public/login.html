@@ -30,7 +30,7 @@
                     </svg></span></a></span>
     </div>
     <div class="uk-width-medium uk-padding-small uk-position-z-index uk-scrollspy-inview uk-animation-fade"
-        uk-scrollspy="cls: uk-animation-fade">
+        style="background-color: rgb(32,32,32, 0.8); padding: 20px;" uk-scrollspy="cls: uk-animation-fade">
 
         <div class="uk-text-center uk-margin">
             <img src="./img/noun_Flying Pig.png" alt="Logo">
@@ -74,7 +74,11 @@
                         IN</button>
                 </div>
                 <!-- Log in with Google instead. -->
-                <div class="g-signin2" data-onsuccess="onSignedIn" data-theme="dark">Sign In</div>
+                <!-- <div class="g-signin2" data-onsuccess="onSignedIn" data-theme="dark">Sign In</div> -->
+                <div class="uk-margin-bottom"><button type="submit"
+                        class="uk-button uk-botton-secondary uk-border-pill uk-width-1-1"><a href="signup.html"
+                            style="text-decoration: none; color: rgb(58, 58, 58);">SIGN
+                            UP</a></button></div>
             </fieldset>
         </form>
         <!-- /login -->
@@ -118,7 +122,8 @@
     <!-- JS FILES -->
     <script src="https://cdn.jsdelivr.net/npm/uikit@latest/dist/js/uikit.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/uikit@latest/dist/js/uikit-icons.min.js"></script>
-
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script type="text/javascript" src="js/login.js"></script>
 </body>
 
 </html>
