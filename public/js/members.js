@@ -1,3 +1,5 @@
+// var vinchecker = require("./vinchecker.js");
+
 $(document).ready(function () {
 
 	const eventBriteBtnEl = $("#eventBriteBtn");
@@ -13,6 +15,7 @@ $(document).ready(function () {
 		$("#backgroundImageInDiv").toggleClass("active");
 	});
 
+<<<<<<< HEAD
 	$(eventBriteBtnEl).on("click", function () {
 		// console.log("Creating Event Frame....hopefully");
 		// eventFrameEl.attr("src", "https://www.eventbrite.com/oauth/authorize?response_type=code&client_id=LV7ITGSKLPHYPZ5JE7&redirect_uri=https://www.eventbrite.com/d/tx--austin/motorcycle-shows/");
@@ -43,4 +46,12 @@ $(document).ready(function () {
 			console.log(response);
 		});
 	};
+=======
+	// Searching for vehicle by VIN
+	$(".vin-search").click(function () {
+		var data = $("#vin-input").val();
+		console.log(data);
+		// vinchecker();
+	});
+>>>>>>> master
 });
