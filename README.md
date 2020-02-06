@@ -4,38 +4,46 @@ This application draws from public information to find motorcycle and car events
 
 ## Let's Get Started
 
-[The Pack is BACK](https://the-pack-is-back.herokuapp.com/)
+[THE PACK IS BACK](https://the-pack-is-back.herokuapp.com/)
 
-As a car/motorcycle enthusiast, 
+As a car/motorcycle enthusiast, I want to keep track of kick-butt hogs and cars on an app, as well as view related events near me and to check for any recalls. The Pack's Colossal Hog site does this all on one site!
 
-## How to use THE PACK's Colossal Website!
+## How to use The Pack's Colossal Website!
 
 Create an account or log-in.
 
-<img src="./public/img/screenshot.png" width="50%" height="auto">
-<img src="./public/img/Screenshot2.png" width="50%" height="auto">
-
-## How Colossal Hog works
+<img src="./public/img/screenshot.png" width="45%" height="auto"> . <img src="./public/img/Screenshot2.png" width="45%" height="auto">
 
 We used markers to open modals with relevant content. 
 
-<img src="./public/img/Screenshot3.png>" width="100%" height="auto">
+<img src="./public/img/Screenshot3.png" width="100%" height="auto">
 
 We added a toggle to change the background from a motorcycle to a car.
+
 <img src="./public/img/Screenshot4.png" width="100%" height="auto">
 
 Each marker that opens a modal returns information based on Eventbrite API and VIN API information.
 
 The second marker opens a new page that allows the user to search for car recalls. 
+
 <img src="./public/img/Screenshot5.png" width="100%" height="auto">
 
 ## Built With
 
 * [Eventbrite](https://www.eventbrite.com/platform/api) - We used Eventbrite to find vehicle events.
-* [UI Kit](https://getuikit.com/docs/introduction) - We used UIkit CSS framework. 
+* [UI Kit](https://getuikit.com/docs/introduction) - We used UIkit CSS framework for a fully responsive website and design. 
 * [Unsplash](https://unsplash.com/t/animals) - We used copyright-free images from this site.
 * [NHTSA](https://vpic.nhtsa.dot.gov/api/) - We used National Highway Traffic Safety Administration's API to information on vehicle recalls.
-Our Flying Pig Icon was created by Amelia Edwards from the Noun Project.
+* [Project 2 Template](https://github.com/Thunderducky/project2starter) - Eric Scott's Project 2 Template.
+* Our Flying Pig Icon was created by Amelia Edwards from the Noun Project.
+
+### Tools
+
+* Node.js, Express.js for back-end development.
+* MySQL, Sequelize.
+* jQuery, Javascript.
+* MVC design.
+* ESLint to maintain good code practices.
 
 ## Contributing
 
