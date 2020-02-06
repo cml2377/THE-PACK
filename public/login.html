@@ -4,6 +4,7 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Login - Hogs N Cars</title>
+    <!-- Icon -->
     <link rel="icon" href="./img/noun_Flying Pig.png">
     <!-- CSS FILES -->
     <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/uikit@latest/dist/css/uikit.min.css">
@@ -12,11 +13,11 @@
 <body
     class="login uk-cover-container uk-background-secondary uk-flex uk-flex-center uk-flex-middle uk-height-viewport uk-overflow-hidden uk-light"
     data-uk-height-viewport="" data-gr-c-s-loaded="true" cz-shortcut-listen="true" style="min-height: calc(100vh);">
-    <!-- overlay -->
-    <div class="uk-position-cover uk-overlay-primary"
+    <!-- Overlay -->
+    <div class="uk-position-cover uk-overlay-primary uk-animation-kenburns"
         style="background-image: url(&quot;./img/jason-wong-klTmVupvGVk-unsplash.jpg&quot;); background-repeat: no-repeat; background-size: cover; background-position: center;">
     </div>
-    <!-- /overlay -->
+    <!-- /Overlay -->
     <div class="uk-position-bottom-center uk-position-small uk-visible@m uk-position-z-index">
         <span class="uk-text-small uk-text-muted">© 2020 THE PACK <a href="https://github.com/cml2377/THE-PACK">Created
                 by Crystal Ly, Brianna McCray, Joshua Kuruvilla, Harrison Thomas</a> | Built with <a
@@ -29,7 +30,8 @@
                         <polygon points="9.8,4.2 6.7,2.4 9.8,0.4 12.9,2.3"></polygon>
                     </svg></span></a></span>
     </div>
-    <div class="uk-width-medium uk-padding-small uk-position-z-index uk-scrollspy-inview uk-animation-fade"
+    <div id="loginBox"
+        class="uk-width-medium uk-padding-small uk-position-z-index uk-scrollspy-inview uk-animation-fade"
         style="background-color: rgb(32,32,32, 0.8); padding: 20px;" uk-scrollspy="cls: uk-animation-fade">
 
         <div class="uk-text-center uk-margin">
@@ -73,8 +75,7 @@
                     <button type="submit" class="uk-button uk-button-primary uk-border-pill uk-width-1-1">LOG
                         IN</button>
                 </div>
-                <!-- Log in with Google instead. -->
-                <!-- <div class="g-signin2" data-onsuccess="onSignedIn" data-theme="dark">Sign In</div> -->
+                <!-- Sign Up Page -->
                 <div class="uk-margin-bottom">
                     <a class="uk-button uk-botton-secondary uk-border-pill uk-width-1-1" href="signup.html"
                         style="text-decoration: none; background-color: rgb(238, 238, 238); color: rgb(80, 79, 79);">SIGN
@@ -113,7 +114,7 @@
                             xmlns="http://www.w3.org/2000/svg" data-svg="arrow-left">
                             <polyline fill="none" stroke="#000" points="10 14 5 9.5 10 5"></polyline>
                             <line fill="none" stroke="#000" x1="16" y1="9.5" x2="5" y2="9.52"></line>
-                        </svg></span> Back to Login</a>
+                        </svg></span>Back to Login</a>
             </div>
         </div>
         <!-- action buttons -->
@@ -123,6 +124,9 @@
     <script src="https://cdn.jsdelivr.net/npm/uikit@latest/dist/js/uikit.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/uikit@latest/dist/js/uikit-icons.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <!-- jQuery JS -->
+    <script src="https://code.jquery.com/jquery.js"></script>
+    <!-- In-house JS -->
     <script type="text/javascript" src="js/login.js"></script>
 </body>
 
