@@ -1,0 +1,219 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <title>Recall</title>
+  <!-- Bootstrap CSS CDN  -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.0.0/css/bootstrap.min.css" />
+
+  <!-- Font Awesome CSS Icons (For cool glyphicons) -->
+  <!-- <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css" /> -->
+  <link rel="stylesheet" href="stylesheets/uikit.min.css" />
+        <script src="js/uikit.min.js"></script>
+        <script src="js/uikit-icons.min.js"></script>
+
+  <!-- Style to fix the issue of text extending past card length -->
+  <style>
+    .card-body a {
+      word-break: break-all;
+    }
+
+    .articleHeadline {
+      line-height: 1.5;
+    }
+  </style>
+</head>
+
+<body>
+
+  <!-- Main Bootstrap Search -->
+  <div class="container">
+
+    <!-- Jumbotron for Title -->
+    <div class="jumbotron" style="background-color: #20315A ; color: white;">
+      <h1 class="text-center">
+        <strong>
+          <i class="fa fa-newspaper-o"></i> Recall Lookup</strong>
+      </h1>
+    </div>
+
+    <!-- Row for Searching New York Times -->
+    <div class="row">
+      <div class="col-sm-12">
+        <br>
+        <!-- First card is for handling the search parameters -->
+        <div class="card">
+          <div class="card-header">
+            <strong>
+              <i class="fa fa-list-alt"></i> Search Parameters</strong>
+          </div>
+          <div class="card-body">
+
+            <!-- Here we create an HTML Form for handling the inputs-->
+            <form role="form">
+
+              <!-- Here we create the text box for capturing the search term-->
+              <!-- <div class="form-group">
+                <label for="pwd">Year:</label>
+                <select1 id="article-count" class="custom-select" aria-labelledby="dropdownMenuButton">
+                    <option selected value="1">Choose a Year</option> -->
+                    <!-- Setting the option for 5 as default -->
+                    <!-- <option value="2">2010</option>
+                    <option value="3">2011</option>
+                    <option value="4">2012</option>
+                    <option value="5">2013</option>
+                    <option value="6">2014</option>
+                    <option value="7">2015</option>
+                    <option value="8">2016</option>
+                    <option value="9">2017</option>
+                    <option value="10">2018</option>
+                    <option value="11">2019</option>
+                    <option value="12">2020</option>
+                  </select1>
+              </div> -->
+
+              <!-- Here we capture the number of records that the user wants to retrieve  -->
+              <!-- <div class="form-group">
+                <label for="pwd">Make:</label>
+                <select2 id="article-count" class="custom-select" aria-labelledby="dropdownMenuButton">
+                  <option selected value="1">Choose a Make</option> -->
+                  <!-- Setting the option for 5 as default -->
+                  <!-- <option value="2">Infiniti</option>
+                  <option value="3">Honda</option>
+                  <option value="4">Volkswagen</option>
+
+                </select2>
+              </div> -->
+              <!-- -------------------------------------------------------------------------------------------- -->
+              <!-- -------------------------------------------------------------------------------------------- -->
+              <!-- -------------------------------------------------------------------------------------------- -->
+              <div class="uk-inline">
+                <button class="uk-button uk-button-default" type="button">Top Right</button>
+                <div uk-dropdown="pos: top-right">
+                    <ul class="uk-nav uk-dropdown-nav">
+                        <li class="uk-active"><a href="#">Active</a></li>
+                        <li><a href="#">Item</a></li>
+                        <li class="uk-nav-header">Header</li>
+                        <li><a href="#">Item</a></li>
+                        <li><a href="#">Item</a></li>
+                        <li class="uk-nav-divider"></li>
+                        <li><a href="#">Item</a></li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="uk-inline">
+                <button class="uk-button uk-button-default" type="button">Bottom Justify</button>
+                <div uk-dropdown="pos: bottom-justify">
+                    <ul class="uk-nav uk-dropdown-nav">
+                        <li class="uk-active"><a href="#">Active</a></li>
+                        <li><a href="#">Item</a></li>
+                        <li class="uk-nav-header">Header</li>
+                        <li><a href="#">Item</a></li>
+                        <li><a href="#">Item</a></li>
+                        <li class="uk-nav-divider"></li>
+                        <li><a href="#">Item</a></li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="uk-inline">
+                <button class="uk-button uk-button-default" type="button">Right Center</button>
+                <div uk-dropdown="pos: right-center">
+                    <ul class="uk-nav uk-dropdown-nav">
+                        <li class="uk-active"><a href="#">Active</a></li>
+                        <li><a href="#">Item</a></li>
+                        <li class="uk-nav-header">Header</li>
+                        <li><a href="#">Item</a></li>
+                        <li><a href="#">Item</a></li>
+                        <li class="uk-nav-divider"></li>
+                        <li><a href="#">Item</a></li>
+                    </ul>
+                </div>
+            </div>
+
+            <!-- </div>
+              <div class="form-group"> 
+                <label for="pwd">Model:</label>
+                <select3 id="article-count" class="custom-select" aria-labelledby="dropdownMenuButton">
+                  <option value="1">Choose a Model</option> -->
+                  <!-- Setting the option for 5 as default -->
+                  <!-- <option value="2">Q50</option>
+                  <option value="3">CRV</option>
+                  <option value="4">Jetta</option>
+
+                </select3>
+              </div> -->
+
+              <!-- Here we capture the Start Year Parameter-->
+              <!-- <div class="form-group">
+                <label for="start-year">Start Year (Optional):</label>
+                <input type="text" class="form-control" id="start-year">
+              </div> -->
+
+              <!-- Here we capture the End Year Parameter -->
+              <!-- <div class="form-group">
+                <label for="end-year">End Year (Optional):</label>
+                <input type="text" class="form-control" id="end-year">
+              </div> -->
+
+              <!-- Here we have our final submit button -->
+              <button type="submit" class="btn btn-default" id="run-search">
+                <i class="fa fa-search"></i> Search</button>
+              <button class="btn btn-default" id="clear-all">
+                <i class="fa fa-trash"></i> Clear Results</button>
+
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- This row will handle all of the retrieved articles -->
+    <!-- <div class="row">
+      <div class="col-sm-12">
+        <br> -->
+
+        <!-- This card will initially be made up of a card and wells for each of the articles retrieved -->
+        <!-- <div class="card"> -->
+
+          <!-- card Heading for the retrieved articles box -->
+          <div class="card-header">
+            <strong>
+              <i class="fa fa-table"></i> Top Results</strong>
+          </div>
+
+          <!-- This main card will hold each of the resulting articles -->
+          <div class="card-body" id="article-section">
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Footer Region -->
+    <div class="row">
+      <div class="col-sm-12">
+
+        <!-- Line Break followed by closing -->
+        <hr>
+        <h5 class="text-center">
+          <small>Made by Joshua Kuruvilla, Crystal Ly, Brianna McCray, Harrison Thomas
+            <i class="fa fa-heart"></i>
+          </small>
+        </h5>
+
+      </div>
+    </div>
+
+  </div>
+
+  <!-- jQuery JS -->
+  <script src="https://code.jquery.com/jquery.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.0.0/js/bootstrap.bundle.min.js"></script>
+  <!-- Code to the JavaScript File -->
+  <script src="nhtsa.js"></script>
+
+</body>
+
+</html>
