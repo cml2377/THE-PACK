@@ -1,4 +1,4 @@
-var vinchecker = require("./vinchecker.js")
+// var vinchecker = require("./vinchecker.js");
 
 $(document).ready(function () {
 	// This file just does a GET request to figure out which user is logged in
