@@ -9,7 +9,11 @@ module.exports = function (sequelize, DataTypes) {
 	});
 
 	Vehicle.associate = function (models) {
-		Vehicle.hasMany(models.User);
+		Vehicle.belongsTo(models.User, {
+			foreignKey: {
+				allowNull: false
+			}
+		});
 	};
 	return Vehicle;
 };
