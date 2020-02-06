@@ -9,7 +9,7 @@ module.exports = function (sequelize, DataTypes) {
 	});
 
 	Vehicle.associate = function (models) {
-		Vehicle.hasMany(models.User)
-	}
+		Vehicle.hasMany(models.User);
+	};
 	return Vehicle;
 };
