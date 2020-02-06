@@ -15,10 +15,6 @@ body {
   background-image: url("../img/what-the-hex-dark.png");
 }
 
-.uk-light {
-  margin-top: 12%;
-}
-
 .uk-animation-reverse {
   background-image: url("../img/jason-wong-klTmVupvGVk-unsplash.jpg");
   background-size: cover;
@@ -26,7 +22,7 @@ body {
 }
 
 .uk-animation-reverse.active{
-  background-image: url("../img/nathan-trampe-cyIERGMF_1U-unsplash.jpg");
+  background-image: url("../img/blake-meyer-CRNbHjNaljo-unsplash.jpg");
   background-size: cover;
   background-position: center;
 }
@@ -35,6 +31,8 @@ body {
 /* The switch - the box around the slider */
 .switch {
   position: relative;
+  margin-top: 20px;
+  margin-right: 20px;
   float: right;
   width: 60px;
   height: 34px;

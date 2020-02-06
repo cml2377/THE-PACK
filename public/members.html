@@ -12,16 +12,15 @@
 
 <body>
 
-  <div class="uk-container">
-
+  <div class="uk-animation-fade">
     <!-- ================================================================================================================================ -->
 
     <!-- We may have to add the background image to the html to add the markers. https://getuikit.com/docs/marker -->
 
     <!-- Example from UI Kit. -->
     <div class="uk-inline uk-background-cover uk-light">
-      <div class="contentBox">
-        <div id="backgroundImageInDiv" style="height: 100vh; width: 100vh;" class="uk-animation-reverse">
+      <div class="contentBox" style="margin: 0 auto;">
+        <div id="backgroundImageInDiv" style="height: 100vh; width: 100vw;" class="uk-animation-reverse">
           <!-- For these markers, we use modals that contain the information the user is looking for. https://getuikit.com/docs/visibility -->
           <!-- Each marker will display information about its contents upon hover. class="uk-button uk-button-default" uk-tooltip="title: Hello World; pos: bottom-right"-->
           <a class="uk-position-absolute uk-transform-center" style="left: 20%; top: 30%"
@@ -30,14 +29,14 @@
             uk-toggle="target: #modal-center" uk-marker uk-tooltip="title: Hog n' Car Events!; pos: top"></a>
           <a class="uk-position-absolute uk-transform-center" style="left: 80%; top: 70%"
             uk-toggle="target: #modal-right" uk-marker uk-tooltip="title: Find Parts; pos: top-left"></a>
-        </div>
-        <!-- Toggles between car and motorcycle. -->
-        <div id="toggleImg">
-          <!-- Rounded switch -->
-          <label class="switch" uk-tooltip="title: Toggle between cars and hogs; pos: top-right">
-            <input type="checkbox">
-            <span class="slider round"></span>
-          </label>
+          <!-- Toggles between car and motorcycle. -->
+          <div id="toggleImg">
+            <!-- Rounded switch -->
+            <label class="switch" uk-tooltip="title: Toggle between cars and hogs; pos: bottom-right">
+              <input type="checkbox">
+              <span class="slider round"></span>
+            </label>
+          </div>
         </div>
       </div>
       <!-- ================================================================================================================================ -->
