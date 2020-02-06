@@ -27,7 +27,7 @@
             uk-toggle="target: #modal-left" uk-marker uk-tooltip="title: Save Favorite Car/Hog Here; pos: top-left"></a>
           <a class="uk-position-absolute uk-transform-center" style="left: 60%; top: 40%"
             uk-toggle="target: #modal-center" uk-marker uk-tooltip="title: Hog n' Car Events!; pos: top"></a>
-          <a class="uk-position-absolute uk-transform-center" style="left: 80%; top: 70%"
+          <a class="uk-position-absolute uk-transform-center" style="left: 65%; top: 70%"
             uk-toggle="target: #modal-right" uk-marker uk-tooltip="title: Find Parts; pos: top-left"></a>
           <!-- Toggles between car and motorcycle. -->
           <div id="toggleImg">
@@ -89,14 +89,17 @@
             <h2 class="uk-modal-title">Find auto events near you</h2>
           </div>
           <!-- Search function -->
-          <div class="uk-margin">
+          <div class="uk-margin">           
             <form class="uk-search uk-search-default">
               <span class="uk-search-icon-flip" uk-search-icon></span>
               <input class="uk-search-input" type="search" placeholder="Search by location...">
             </form>
           </div>
-          <button class="uk-button uk-button-default demo" type="button"
+          <button id="eventBriteBtn" class="uk-button uk-button-default demo" type="button"
             onclick="UIkit.notification({message: '<span uk-icon=\'icon: check\'></span> Added event to list!'})">Submit</button>
+            <div id="eventBriteDiv">
+              <div id="eventBriteFrame"></div>
+            </div>
         </div>
       </div>
 
