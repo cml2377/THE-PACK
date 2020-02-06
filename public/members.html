@@ -5,8 +5,10 @@
   <title>Welcome</title>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <!--UI Kit CSS-->
+  <!-- UI Kit CSS -->
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/uikit@3.3.1/dist/css/uikit.min.css" />
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css?family=Poiret+One&display=swap" rel="stylesheet">
   <link href="stylesheets/style.css" rel="stylesheet">
 </head>
 
@@ -21,14 +23,26 @@
     <div class="uk-inline uk-background-cover uk-light">
       <div class="contentBox" style="margin: 0 auto;">
         <div id="backgroundImageInDiv" style="height: 100vh; width: 100vw;" class="uk-animation-reverse">
+          <!-- =========================================================================================================================== -->
           <!-- For these markers, we use modals that contain the information the user is looking for. https://getuikit.com/docs/visibility -->
-          <!-- Each marker will display information about its contents upon hover. class="uk-button uk-button-default" uk-tooltip="title: Hello World; pos: bottom-right"-->
+          <!-- Each marker will display information about its contents upon hover. Save Favorite Vehicle Marker -->
           <a class="uk-position-absolute uk-transform-center" style="left: 20%; top: 30%"
             uk-toggle="target: #modal-left" uk-marker uk-tooltip="title: Save Favorite Car/Hog Here; pos: top-left"></a>
+          <!-- Events Marker -->
           <a class="uk-position-absolute uk-transform-center" style="left: 60%; top: 40%"
             uk-toggle="target: #modal-center" uk-marker uk-tooltip="title: Hog n' Car Events!; pos: top"></a>
+          <!-- Parts Marker -->
           <a class="uk-position-absolute uk-transform-center" style="left: 80%; top: 70%"
-            uk-toggle="target: #modal-right" uk-marker uk-tooltip="title: Find Vehicle by VIN; pos: top-left"></a>
+            uk-toggle="target: #modal-right" uk-marker uk-tooltip="title: Find Parts; pos: top-left"></a>
+          <!-- Recalls Marker -->
+          <a class="uk-position-absolute uk-transform-center" style="left: 40%; top: 50%" uk-marker
+            uk-tooltip="title: Check for recalls; pos: bottom" href="nhtsa.html" uk-marker></a>
+          <!-- ======================================================================================================================== -->
+          <!-- The name of our app -->
+          <h1 class="uk-heading-line uk-text-center" style="font-family: 'Poiret One', cursive; font-size: 5rem;">
+            <span>Colossal
+              Hogs</span></h1>
+
           <!-- Toggles between car and motorcycle. -->
           <div id="toggleImg">
             <!-- Rounded switch -->
@@ -37,6 +51,7 @@
               <span class="slider round"></span>
             </label>
           </div>
+
         </div>
       </div>
       <!-- ================================================================================================================================ -->
@@ -95,8 +110,6 @@
               <input class="uk-search-input" type="search" placeholder="Search by location...">
             </form>
           </div>
-          <button class="uk-button uk-button-default demo" type="button"
-            onclick="UIkit.notification({message: '<span uk-icon=\'icon: check\'></span> Added event to list!'})">Submit</button>
         </div>
       </div>
 
