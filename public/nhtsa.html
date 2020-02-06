@@ -3,12 +3,15 @@
 
 <head>
   <meta charset="UTF-8">
-  <title>New York Times Search</title>
+  <title>Recall</title>
   <!-- Bootstrap CSS CDN  -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.0.0/css/bootstrap.min.css" />
 
   <!-- Font Awesome CSS Icons (For cool glyphicons) -->
-  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css" />
+  <!-- <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css" /> -->
+  <link rel="stylesheet" href="stylesheets/uikit.min.css" />
+        <script src="js/uikit.min.js"></script>
+        <script src="js/uikit-icons.min.js"></script>
 
   <!-- Style to fix the issue of text extending past card length -->
   <style>
@@ -51,12 +54,12 @@
             <form role="form">
 
               <!-- Here we create the text box for capturing the search term-->
-              <div class="form-group">
+              <!-- <div class="form-group">
                 <label for="pwd">Year:</label>
                 <select1 id="article-count" class="custom-select" aria-labelledby="dropdownMenuButton">
-                    <option selected value="1">Choose a Make</option>
+                    <option selected value="1">Choose a Year</option> -->
                     <!-- Setting the option for 5 as default -->
-                    <option value="2">2010</option>
+                    <!-- <option value="2">2010</option>
                     <option value="3">2011</option>
                     <option value="4">2012</option>
                     <option value="5">2013</option>
@@ -68,32 +71,80 @@
                     <option value="11">2019</option>
                     <option value="12">2020</option>
                   </select1>
-              </div>
+              </div> -->
 
               <!-- Here we capture the number of records that the user wants to retrieve  -->
-              <div class="form-group">
+              <!-- <div class="form-group">
                 <label for="pwd">Make:</label>
                 <select2 id="article-count" class="custom-select" aria-labelledby="dropdownMenuButton">
-                  <option selected value="1">Choose a Make</option>
+                  <option selected value="1">Choose a Make</option> -->
                   <!-- Setting the option for 5 as default -->
-                  <option value="2">Infiniti</option>
+                  <!-- <option value="2">Infiniti</option>
                   <option value="3">Honda</option>
                   <option value="4">Volkswagen</option>
 
                 </select2>
-              </div>
+              </div> -->
+              <!-- -------------------------------------------------------------------------------------------- -->
+              <!-- -------------------------------------------------------------------------------------------- -->
+              <!-- -------------------------------------------------------------------------------------------- -->
+              <div class="uk-inline">
+                <button class="uk-button uk-button-default" type="button">Top Right</button>
+                <div uk-dropdown="pos: top-right">
+                    <ul class="uk-nav uk-dropdown-nav">
+                        <li class="uk-active"><a href="#">Active</a></li>
+                        <li><a href="#">Item</a></li>
+                        <li class="uk-nav-header">Header</li>
+                        <li><a href="#">Item</a></li>
+                        <li><a href="#">Item</a></li>
+                        <li class="uk-nav-divider"></li>
+                        <li><a href="#">Item</a></li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="uk-inline">
+                <button class="uk-button uk-button-default" type="button">Bottom Justify</button>
+                <div uk-dropdown="pos: bottom-justify">
+                    <ul class="uk-nav uk-dropdown-nav">
+                        <li class="uk-active"><a href="#">Active</a></li>
+                        <li><a href="#">Item</a></li>
+                        <li class="uk-nav-header">Header</li>
+                        <li><a href="#">Item</a></li>
+                        <li><a href="#">Item</a></li>
+                        <li class="uk-nav-divider"></li>
+                        <li><a href="#">Item</a></li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="uk-inline">
+                <button class="uk-button uk-button-default" type="button">Right Center</button>
+                <div uk-dropdown="pos: right-center">
+                    <ul class="uk-nav uk-dropdown-nav">
+                        <li class="uk-active"><a href="#">Active</a></li>
+                        <li><a href="#">Item</a></li>
+                        <li class="uk-nav-header">Header</li>
+                        <li><a href="#">Item</a></li>
+                        <li><a href="#">Item</a></li>
+                        <li class="uk-nav-divider"></li>
+                        <li><a href="#">Item</a></li>
+                    </ul>
+                </div>
+            </div>
 
-              <div class="form-group">
+            <!-- </div>
+              <div class="form-group"> 
                 <label for="pwd">Model:</label>
                 <select3 id="article-count" class="custom-select" aria-labelledby="dropdownMenuButton">
-                  <option selected value="1">Choose a Model</option>
+                  <option value="1">Choose a Model</option> -->
                   <!-- Setting the option for 5 as default -->
-                  <option value="2">Q50</option>
+                  <!-- <option value="2">Q50</option>
                   <option value="3">CRV</option>
                   <option value="4">Jetta</option>
 
                 </select3>
-              </div>
+              </div> -->
 
               <!-- Here we capture the Start Year Parameter-->
               <!-- <div class="form-group">
