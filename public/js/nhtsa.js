@@ -5,10 +5,10 @@ import Axios from "axios";
 //  * @returns {string} URL for NYT API based on form inputs
 //  */
 // function buildQueryURL() {
-//     // queryURL is the url we'll use to query the API
+//     // queryURL is the url we"ll use to query the API
 //     var queryURL = "https://api.nytimes.com/svc/search/v2/articlesearch.json?";
 
-//     // Begin building an object to contain our API call's query parameters
+//     // Begin building an object to contain our API call"s query parameters
 //     // Set the API key
 //     var queryParams = { "api-key": "R1a31F4tBjCUaM2ho8GtIFsrSdtXt30M" };
 
@@ -47,7 +47,7 @@ import Axios from "axios";
 //    */
 //   function updatePage(NYTData) {
 //     // Get from the form the number of results to display
-//     // API doesn't have a "limit" parameter, so we have to do this ourselves
+//     // API doesn"t have a "limit" parameter, so we have to do this ourselves
 //     var numArticles = $("#article-count").val();
 
 //     // Log the NYTData to console, where it will show up as an object
@@ -71,12 +71,12 @@ import Axios from "axios";
 
 //       // If the article has a headline, log and append to $articleList
 //       var headline = article.headline;
-//       var $articleListItem = $("<li class='list-group-item articleHeadline'>");
+//       var $articleListItem = $("<li class="list-group-item articleHeadline">");
 
 //       if (headline && headline.main) {
 //         console.log(headline.main);
 //         $articleListItem.append(
-//           "<span class='label label-primary'>" +
+//           "<span class="label label-primary">" +
 //             articleCount +
 //             "</span>" +
 //             "<strong> " +
@@ -108,7 +108,7 @@ import Axios from "axios";
 //       }
 
 //       // Append and log url
-//       $articleListItem.append("<a href='" + article.web_url + "'>" + article.web_url + "</a>");
+//       $articleListItem.append("<a href="" + article.web_url + "">" + article.web_url + "</a>");
 //       console.log(article.web_url);
 
 //       // Append the article
@@ -158,7 +158,7 @@ import Axios from "axios";
 //     URL: "https://one.nhtsa.gov/webapi/api/Recalls/vehicle/modelyear/2017/make/infiniti/model/q50?format=json",
 //     method: "GET"
 // }).then(function (res) {
-//     console.log(res, "You've made a response!");
+//     console.log(res, "You"ve made a response!");
 // })
 
 // const axios = require("axios");

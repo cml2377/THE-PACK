@@ -3,214 +3,138 @@
 
 <head>
   <meta charset="UTF-8">
-  <title>Recall</title>
-  <!-- Bootstrap CSS CDN  -->
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.0.0/css/bootstrap.min.css" />
-
-  <!-- Font Awesome CSS Icons (For cool glyphicons) -->
-  <!-- <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css" /> -->
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Recalls - Colossal Hogs and Cars</title>
+  <!-- Icon -->
+  <link rel="icon" href="./img/noun_Flying Pig.png">
+  <!-- UIKit CSS Framework -->
   <link rel="stylesheet" href="stylesheets/uikit.min.css" />
-        <script src="js/uikit.min.js"></script>
-        <script src="js/uikit-icons.min.js"></script>
-
-  <!-- Style to fix the issue of text extending past card length -->
-  <style>
-    .card-body a {
-      word-break: break-all;
-    }
-
-    .articleHeadline {
-      line-height: 1.5;
-    }
-  </style>
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css?family=Poiret+One&display=swap" rel="stylesheet">
+  <!-- In-house CSS -->
+  <link rel="stylesheet" href="stylesheets/nhtsa.css" />
 </head>
 
-<body>
+<body
+  class="login uk-cover-container uk-background-secondary uk-flex uk-flex-center uk-flex-middle uk-height-viewport uk-overflow-hidden uk-light"
+  data-uk-height-viewport="" data-gr-c-s-loaded="true" cz-shortcut-listen="true" style="min-height: calc(100vh);">
 
-  <!-- Main Bootstrap Search -->
-  <div class="container">
-
-    <!-- Jumbotron for Title -->
-    <div class="jumbotron" style="background-color: #20315A ; color: white;">
-      <h1 class="text-center">
-        <strong>
-          <i class="fa fa-newspaper-o"></i> Recall Lookup</strong>
-      </h1>
-    </div>
-
-    <!-- Row for Searching New York Times -->
-    <div class="row">
-      <div class="col-sm-12">
-        <br>
-        <!-- First card is for handling the search parameters -->
-        <div class="card">
-          <div class="card-header">
-            <strong>
-              <i class="fa fa-list-alt"></i> Search Parameters</strong>
-          </div>
-          <div class="card-body">
-
-            <!-- Here we create an HTML Form for handling the inputs-->
-            <form role="form">
-
-              <!-- Here we create the text box for capturing the search term-->
-              <!-- <div class="form-group">
-                <label for="pwd">Year:</label>
-                <select1 id="article-count" class="custom-select" aria-labelledby="dropdownMenuButton">
-                    <option selected value="1">Choose a Year</option> -->
-                    <!-- Setting the option for 5 as default -->
-                    <!-- <option value="2">2010</option>
-                    <option value="3">2011</option>
-                    <option value="4">2012</option>
-                    <option value="5">2013</option>
-                    <option value="6">2014</option>
-                    <option value="7">2015</option>
-                    <option value="8">2016</option>
-                    <option value="9">2017</option>
-                    <option value="10">2018</option>
-                    <option value="11">2019</option>
-                    <option value="12">2020</option>
-                  </select1>
-              </div> -->
-
-              <!-- Here we capture the number of records that the user wants to retrieve  -->
-              <!-- <div class="form-group">
-                <label for="pwd">Make:</label>
-                <select2 id="article-count" class="custom-select" aria-labelledby="dropdownMenuButton">
-                  <option selected value="1">Choose a Make</option> -->
-                  <!-- Setting the option for 5 as default -->
-                  <!-- <option value="2">Infiniti</option>
-                  <option value="3">Honda</option>
-                  <option value="4">Volkswagen</option>
-
-                </select2>
-              </div> -->
-              <!-- -------------------------------------------------------------------------------------------- -->
-              <!-- -------------------------------------------------------------------------------------------- -->
-              <!-- -------------------------------------------------------------------------------------------- -->
-              <div class="uk-inline">
-                <button class="uk-button uk-button-default" type="button">Top Right</button>
-                <div uk-dropdown="pos: top-right">
-                    <ul class="uk-nav uk-dropdown-nav">
-                        <li class="uk-active"><a href="#">Active</a></li>
-                        <li><a href="#">Item</a></li>
-                        <li class="uk-nav-header">Header</li>
-                        <li><a href="#">Item</a></li>
-                        <li><a href="#">Item</a></li>
-                        <li class="uk-nav-divider"></li>
-                        <li><a href="#">Item</a></li>
-                    </ul>
-                </div>
-            </div>
-            
-            <div class="uk-inline">
-                <button class="uk-button uk-button-default" type="button">Bottom Justify</button>
-                <div uk-dropdown="pos: bottom-justify">
-                    <ul class="uk-nav uk-dropdown-nav">
-                        <li class="uk-active"><a href="#">Active</a></li>
-                        <li><a href="#">Item</a></li>
-                        <li class="uk-nav-header">Header</li>
-                        <li><a href="#">Item</a></li>
-                        <li><a href="#">Item</a></li>
-                        <li class="uk-nav-divider"></li>
-                        <li><a href="#">Item</a></li>
-                    </ul>
-                </div>
-            </div>
-            
-            <div class="uk-inline">
-                <button class="uk-button uk-button-default" type="button">Right Center</button>
-                <div uk-dropdown="pos: right-center">
-                    <ul class="uk-nav uk-dropdown-nav">
-                        <li class="uk-active"><a href="#">Active</a></li>
-                        <li><a href="#">Item</a></li>
-                        <li class="uk-nav-header">Header</li>
-                        <li><a href="#">Item</a></li>
-                        <li><a href="#">Item</a></li>
-                        <li class="uk-nav-divider"></li>
-                        <li><a href="#">Item</a></li>
-                    </ul>
-                </div>
-            </div>
-
-            <!-- </div>
-              <div class="form-group"> 
-                <label for="pwd">Model:</label>
-                <select3 id="article-count" class="custom-select" aria-labelledby="dropdownMenuButton">
-                  <option value="1">Choose a Model</option> -->
-                  <!-- Setting the option for 5 as default -->
-                  <!-- <option value="2">Q50</option>
-                  <option value="3">CRV</option>
-                  <option value="4">Jetta</option>
-
-                </select3>
-              </div> -->
-
-              <!-- Here we capture the Start Year Parameter-->
-              <!-- <div class="form-group">
-                <label for="start-year">Start Year (Optional):</label>
-                <input type="text" class="form-control" id="start-year">
-              </div> -->
-
-              <!-- Here we capture the End Year Parameter -->
-              <!-- <div class="form-group">
-                <label for="end-year">End Year (Optional):</label>
-                <input type="text" class="form-control" id="end-year">
-              </div> -->
-
-              <!-- Here we have our final submit button -->
-              <button type="submit" class="btn btn-default" id="run-search">
-                <i class="fa fa-search"></i> Search</button>
-              <button class="btn btn-default" id="clear-all">
-                <i class="fa fa-trash"></i> Clear Results</button>
-
-            </form>
-          </div>
-        </div>
-      </div>
-    </div>
-
-    <!-- This row will handle all of the retrieved articles -->
-    <!-- <div class="row">
-      <div class="col-sm-12">
-        <br> -->
-
-        <!-- This card will initially be made up of a card and wells for each of the articles retrieved -->
-        <!-- <div class="card"> -->
-
-          <!-- card Heading for the retrieved articles box -->
-          <div class="card-header">
-            <strong>
-              <i class="fa fa-table"></i> Top Results</strong>
-          </div>
-
-          <!-- This main card will hold each of the resulting articles -->
-          <div class="card-body" id="article-section">
-          </div>
-        </div>
-      </div>
-    </div>
-
-    <!-- Footer Region -->
-    <div class="row">
-      <div class="col-sm-12">
-
-        <!-- Line Break followed by closing -->
-        <hr>
-        <h5 class="text-center">
-          <small>Made by Joshua Kuruvilla, Crystal Ly, Brianna McCray, Harrison Thomas
-            <i class="fa fa-heart"></i>
-          </small>
-        </h5>
-
-      </div>
-    </div>
-
+  <!-- Overlay -->
+  <div class="uk-position-cover uk-overlay-primary"
+    style="background-image: url(&quot;./img/tory-bishop-zJGYeBShwBc-unsplash.jpg&quot;); background-repeat: no-repeat; background-size: cover; background-position: center;">
   </div>
+  <!-- /Overlay -->
 
+  <!-- Footer -->
+  <div class="uk-position-bottom-center uk-position-small uk-visible@m uk-position-z-index">
+    <span class="uk-text-small uk-text-muted">© 2020 THE PACK <a href="https://github.com/cml2377/THE-PACK">Created
+        by Crystal Ly, Brianna McCray, Joshua Kuruvilla, Harrison Thomas</a> | Built with <a href="http://getuikit.com"
+        title="" target="_blank" data-uk-tooltip="" aria-expanded="false"><span data-uk-icon="uikit"
+          class="uk-icon"><svg width="20" height="20" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"
+            data-svg="uikit">
+            <polygon
+              points="14.4,3.1 11.3,5.1 15,7.3 15,12.9 10,15.7 5,12.9 5,8.5 2,6.8 2,14.8 9.9,19.5 18,14.8 18,5.3">
+            </polygon>
+            <polygon points="9.8,4.2 6.7,2.4 9.8,0.4 12.9,2.3"></polygon>
+          </svg></span></a></span>
+  </div>
+  <!-- =================================================================== -->
+
+  <!-- NHTSA Recall Search Form -->
+
+  <!-- Search Params: Year, Make, Model -->
+
+  <!-- IDs for Year, Make, Model selection: userYear, userMake, userModel -->
+  <div class="uk-overlay uk-overlay-default uk-position-center" id="nhtsaBox">
+    <!-- The name of the page -->
+    <h1 class="uk-heading-line uk-text-center" style="font-family: 'Poiret One', cursive; font-size: 5rem;">
+      <span>Recall Search Engine</span></h1>
+    <div class="uk-form-stacked">
+
+      <div class="uk-margin">
+        <label class="uk-form-label" for="userMake">Select Make</label>
+        <div class="uk-form-controls">
+          <select class="uk-select" id="userMake">
+            <option>Acura</option>
+            <option>Alfa Romeo</option>
+            <option>Aston Martin</option>
+            <option>Audi</option>
+            <option>Bentley</option>
+            <option>BMW</option>
+            <option>Buick</option>
+            <option>Cadillac</option>
+            <option>Chevrolet</option>
+            <option>Chrysler</option>
+            <option>Dodge</option>
+            <option>Ferrari</option>
+            <option>FIAT</option>
+            <option>Ford</option>
+            <option>Genesis</option>
+            <option>GMC</option>
+            <option>Honda</option>
+            <option>Hyundai</option>
+            <option>Infiniti</option>
+            <option>Jaguar</option>
+            <option>Jeep</option>
+            <option>Kia</option>
+            <option>Lamborghini</option>
+            <option>Land Rover</option>
+            <option>Lexus</option>
+            <option>Lincoln</option>
+            <option>Lotus</option>
+            <option>Maserati</option>
+            <option>Mazda</option>
+            <option>McLaren</option>
+            <option>Mercedes-Benz</option>
+            <option>Mini</option>
+            <option>Mitsubishi</option>
+            <option>Nissan</option>
+            <option>Porsche</option>
+            <option>Ram</option>
+            <option>Rivian</option>
+            <option>Rolls-Royce</option>
+            <option>Smart</option>
+            <option>Subaru</option>
+            <option>Tesla</option>
+            <option>Toyota</option>
+            <option>Volkswagen</option>
+            <option>Volvo</option>
+          </select>
+        </div>
+      </div>
+
+      <div class="uk-margin">
+        <label class="uk-form-label" for="userModel">Input Model</label>
+        <div class="uk-margin">
+          <input id="userModel" class="uk-input" type="text" placeholder="Input model of car">
+        </div>
+      </div>
+
+      <div class="uk-margin">
+        <label class="uk-form-label" for="userYear">Input Year</label>
+        <div class="uk-margin">
+          <input id="userYear" class="uk-input" value="" placeholder="Input year of car">
+        </div>
+      </div>
+      <div class="uk-margin-bottom">
+        <button type="submit" class="uk-button uk-button-primary uk-border-pill uk-width-1-1">SUBMIT</button>
+      </div>
+    </div>
+    <!-- Links that bring user back to members.html. -->
+    <p uk-margin>
+      <a class="uk-button uk-button-default" href="members.html">Back</a>
+    </p>
+  </div>
+  </form>
+
+  <!-- Returns Recalls -->
+
+
+  <!-- UIKit JS -->
+  <script src="js/uikit.min.js"></script>
+  <script src="js/uikit-icons.min.js"></script>
   <!-- jQuery JS -->
   <script src="https://code.jquery.com/jquery.js"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.0.0/js/bootstrap.bundle.min.js"></script>
   <!-- Code to the JavaScript File -->
   <script src="nhtsa.js"></script>
 

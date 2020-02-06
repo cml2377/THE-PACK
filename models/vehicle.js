@@ -3,9 +3,13 @@ module.exports = function (sequelize, DataTypes) {
 		category: DataTypes.STRING,
 		make: DataTypes.STRING,
 		model: DataTypes.STRING,
-		year: DataTypes.INTEGER, 
-		user_email: DataTypes.STRING
-
+		series: DataTypes.STRING,
+		plantCountry: DataTypes.STRING,
+		year: DataTypes.INTEGER
 	});
+
+	Vehicle.associate = function (models) {
+		Vehicle.hasMany(models.User);
+	};
 	return Vehicle;
 };
