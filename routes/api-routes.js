@@ -26,7 +26,10 @@ module.exports = function (app) {
 			});
 	});
 
+<<<<<<< HEAD
 
+=======
+>>>>>>> master
 	// Route for logging user out
 	app.get("/logout", function (req, res) {
 		req.logout();

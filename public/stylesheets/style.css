@@ -31,8 +31,8 @@ body {
 /* The switch - the box around the slider */
 .switch {
   position: relative;
-  margin-top: 20px;
-  margin-right: 20px;
+  margin-right: 50px;
+  margin-top: -40px;
   float: right;
   width: 60px;
   height: 34px;
