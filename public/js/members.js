@@ -36,7 +36,7 @@ $(document).ready(function () {
 			header: ('Access-Control-Allow-Headers: Origin, X-Requested-With, Content-Type, Accept'),
 			url: "https://cors-ut-bootcamp.herokuapp.com/https://www.eventbrite.com/oauth/authorize?response_type=code&client_id=LV7ITGSKLPHYPZ5JE7&redirect_uri=https://www.eventbrite.com/",
 			headers: {
-				"Authorization": "Bearer KAWTBAB3KKKBTZGNHJFV", 
+				"Authorization": "Bearer " + eventBriteApiKey, 
 				  
 			}
 		}) .then(function (response) {
