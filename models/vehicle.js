@@ -12,7 +12,8 @@ module.exports = function (sequelize, DataTypes) {
 		Vehicle.belongsTo(models.User, {
 			foreignKey: {
 				allowNull: false
-			};
+			}
 		});
-		return Vehicle;
 	};
+	return Vehicle;
+};
