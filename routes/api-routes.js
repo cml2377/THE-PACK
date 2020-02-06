@@ -26,6 +26,12 @@ module.exports = function (app) {
 			});
 	});
 
+	app.get("/api/car", function (req, res) {
+		db.Car.create({
+
+		})
+	}
+
 	// Route for logging user out
 	app.get("/logout", function (req, res) {
 		req.logout();
