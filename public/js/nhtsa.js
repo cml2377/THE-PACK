@@ -159,24 +159,24 @@
 //     console.log(res, "You've made a response!");
 // })
 
-const year;//get this from the front end 
-// select1 = ({ year });
-const make;
-// select2 = ({ make });
-const model;
-// select3 = ({ model });
+// const year//get this from the front end 
+// // select1 = ({ year });
+// const make
+// // // select2 = ({ make });
+// // const model
+// // select3 = ({ model });
 
 
 
-$.ajax({
-    url: `https://cors-ut-bootcamp.herokuapp.com/https://one.nhtsa.gov/webapi/api/Recalls/vehicle/modelyear/${year}/make/${make}/model/${model}?format=json`,
-    type: "GET",
-    dataType: "json",
-    success: function (result) {
-        console.log(result);
-    },
-    error: function (xhr, ajaxOptions, thrownError) {
-        console.log(xhr.status);
-        console.log(thrownError);
-    }
-});
+// $.ajax({
+//     url: `https://cors-ut-bootcamp.herokuapp.com/https://one.nhtsa.gov/webapi/api/Recalls/vehicle/modelyear/${year}/make/${make}/model/${model}?format=json`,
+//     type: "GET",
+//     dataType: "json",
+//     success: function (result) {
+//         console.log(result);
+//     },
+//     error: function (xhr, ajaxOptions, thrownError) {
+//         console.log(xhr.status);
+//         console.log(thrownError);
+//     }
+// });
