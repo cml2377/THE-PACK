@@ -1,3 +1,5 @@
+import Axios from "axios";
+
 // /**
 //  * pulls information from the form and build the query URL
 //  * @returns {string} URL for NYT API based on form inputs
@@ -159,24 +161,39 @@
 //     console.log(res, "You've made a response!");
 // })
 
-// const year//get this from the front end 
-// // select1 = ({ year });
-// const make
-// // // select2 = ({ make });
-// // const model
-// // select3 = ({ model });
+// const axios = require("axios");
+// const ajax = require("ajax");
 
 
+let year = userYear;//get this from the front end 
+// select1 = ({ year });
+let make = userMake;
+// // select2 = ({ make });
+let model = userModel;
+// select3 = ({ model });
 
-// $.ajax({
-//     url: `https://cors-ut-bootcamp.herokuapp.com/https://one.nhtsa.gov/webapi/api/Recalls/vehicle/modelyear/${year}/make/${make}/model/${model}?format=json`,
-//     type: "GET",
-//     dataType: "json",
-//     success: function (result) {
-//         console.log(result);
-//     },
-//     error: function (xhr, ajaxOptions, thrownError) {
-//         console.log(xhr.status);
-//         console.log(thrownError);
-//     }
-// });
+function recallSearch(data) {
+    axios.get("https://one.nhtsa.gov/webapi/api/Recalls/vehicle/modelyear/${year}/make/${make}/model/${model}?format=json")
+        .then(function (response) {
+            recall = response.data.Results[4].Value;
+            summary = response.data.Results[5].Value;
+            consequence = response.data.Results[6].Value;
+            remedy = response.data.Results[7].Value;
+
+
+        })
+}
+
+
+$.ajax({
+    url: `https://cors-ut-bootcamp.herokuapp.com/https://one.nhtsa.gov/webapi/api/Recalls/vehicle/modelyear/${year}/make/${make}/model/${model}?format=json`,
+    type: "GET",
+    dataType: "json",
+    success: function (result) {
+        console.log(result);
+    },
+    error: function (xhr, ajaxOptions, thrownError) {
+        console.log(xhr.status);
+        console.log(thrownError);
+    }
+});
