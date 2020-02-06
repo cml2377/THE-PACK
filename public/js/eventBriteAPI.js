@@ -1,10 +1,13 @@
-function eventBrite() {
-    
-    $.ajax({
-        url: "https://www.eventbrite.com/oauth/authorize?response_type=code&client_id=LV7ITGSKLPHYPZ5JE7&redirect_uri=https://www.eventbrite.com/d/tx--austin/motorcycle-shows/",
-        method: "GET"
-    }).then(function(response){ 
-        console.log(response)
-    })
-};
-eventBrite();
+
+var settings = {
+    "url": "https://www.eventbriteapi.com/v3/subcategories/",
+    "method": "GET",
+    "timeout": 0,
+    "headers": {
+      "Authorization": "Bearer KAWTBAB3KKKBTZGNHJFV"
+    },
+  };
+  
+  $.ajax(settings).done(function (response) {
+    console.log(response);
+  });
