@@ -165,27 +165,51 @@ const axios = require("axios");
 
 // const ajax = require("ajax");
 
+$(".recallSearch-btn").click(function () {
+    var data = [$("#userYear").val();
+    console.log(data);
+    recallSearch(data);
+});
 
-// let year = userYear;//get this from the front end 
+var make = $("#userMake").text();
+var model = $("#userModel.text()
+var year = $("#yearInput").val()
+// let ({"year"}) = userYear;//get this from the front end 
 // // select1 = ({ year });
-// let make = userMake;
+// let {"make"} = userMake
 // // // select2 = ({ make });
-// let model = userModel;
-// // select3 = ({ model });
+// let {model} = userModel
+// select3 = ({ model });
+// var response = "https://one.nhtsa.gov/webapi/api/Recalls/vehicle/modelyear/2017/make/infiniti/model/q50?format=json";
 
-// function recallSearch(data) {
-    axios.get("https://cors-ut-bootcamp.herokuapp.com/https://one.nhtsa.gov/webapi/api/Recalls/vehicle/modelyear/2017/make/infiniti/model/q50?format=json")    
-// axios.get(`https://cors-ut-bootcamp.herokuapp.com/https://one.nhtsa.gov/webapi/api/Recalls/vehicle/modelyear/${year}/make/${make}/model/${model}?format=json`)
+
+function recallSearch() {
+    // axios.get("https://one.nhtsa.gov/webapi/api/Recalls/vehicle/modelyear/2017/make/infiniti/model/q50?format=json")    
+    // axios.get(`https://cors-ut-bootcamp.herokuapp.com/https://one.nhtsa.gov/webapi/api/Recalls/vehicle/modelyear/${year}/make/${make}/model/${model}?format=json`)
+    axios.get("https://one.nhtsa.gov/webapi/api/Recalls/vehicle/modelyear/2017/make/infiniti/model/q50?format=json")
+
+
         .then(function (response) {
-            // recall = response.data.Results[4].Value;
-            // summary = response.data.Results[5].Value;
-            // consequence = response.data.Results[6].Value;
-            // remedy = response.data.Results[7].Value;
-            console.log(response.data);
+
+            // var recall = response.results;
+            //         // summary = response.data.Results[5].Value;
+            //     //     // consequence = response.data.Results[6].Value;
+            //     //     // remedy = response.data.Results[7].Value;
+            console.log(response.data.Results[0].ModelYear);
+            console.log(response.data.Results[0].Make);
+            console.log(response.data.Results[0].Model);
+            console.log(response.data.Results[0].Component);
+            console.log(response.data.Results[0].Summary);
+            console.log(response.data.Results[0].Remedy);
 
 
+
+
+
+            // });
         });
-
+}
+recallSearch();
 
 
 // $.ajax({
@@ -200,3 +224,5 @@ const axios = require("axios");
 //         console.log(thrownError);
 //     }
 // });
+
+// .MAP
