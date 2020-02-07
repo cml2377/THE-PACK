@@ -105,57 +105,55 @@
 
             <button id="googleBtn" class="uk-button uk-button-default demo" type="button">Submit</button>
 
-          <div id="googleDiv">
+            <div id="googleDiv">
+            </div>
           </div>
         </div>
-      </div>
 
-      <!-- Find vehicles here -->
-      <div id="modal-right" class="uk-flex-top" uk-modal>
-        <div class="uk-modal-dialog uk-modal-body uk-margin-auto-vertical">
-          <button class="uk-modal-close-default" type="button" uk-close></button>
-          <div class="uk-modal-header">
-            <h2 class="uk-modal-title">Search for vehicles by their VIN number!</h2>
+        <!-- Find vehicles here -->
+        <div id="modal-right" class="uk-flex-top" uk-modal>
+          <div class="uk-modal-dialog uk-modal-body uk-margin-auto-vertical">
+            <button class="uk-modal-close-default" type="button" uk-close></button>
+            <div class="uk-modal-header">
+              <h2 class="uk-modal-title">Search for vehicles by their VIN number!</h2>
+            </div>
+            <form>
+              <input id="vin-input" class="uk-input" type="text">
+            </form>
+            <button class="uk-button uk-button-default demo vin-search" type="button"
+              onclick="UIkit.notification({message: '<span uk-icon=\'icon: check\'></span> Searching for vehicle!'})">Submit</button>
+            <button class="uk-button uk-button-default demo add-to-favorites" type="button">Add to Favorites!</button>
+            <div id="vehicle-display"></div>
           </div>
-          <form>
-            <input id="vin-input" class="uk-input" type="text">
-          </form>
-          <button class="uk-button uk-button-default demo vin-search" type="button"
-            onclick="UIkit.notification({message: '<span uk-icon=\'icon: check\'></span> Searching for vehicle!'})">Submit</button>
-          <button class="uk-button uk-button-default demo add-to-favorites" type="button">Add to Favorites!</button>
-          <div id="vehicle-display"></div>
         </div>
-      </div>
 
-      <!-- Define vehicle variable modal -->
-      <div id="modal-bottom" class="uk-flex-top" uk-modal>
-        <div class="uk-modal-dialog uk-modal-body uk-margin-auto-vertical">
+        <!-- Define vehicle variable modal -->
+        <div id="modal-bottom" class="uk-flex-top" uk-modal>
+          <div class="uk-modal-dialog uk-modal-body uk-margin-auto-vertical">
 
-          <button class="uk-modal-close-default" type="button" uk-close></button>
-          <div class="uk-modal-header">
-            <h2 class="uk-modal-title">Vehicle Definitions</h2>
+            <button class="uk-modal-close-default" type="button" uk-close></button>
+            <div class="uk-modal-header">
+              <h2 class="uk-modal-title">Vehicle Definitions</h2>
+            </div>
+            <form>
+              <select id="vehicleVariables" class="uk-select"></select>
+            </form>
+            <div id="variableResults"></div>
           </div>
-          <form>
-            <select id="vehicleVariables" class="uk-select"
-              data-source="https://cors-ut-bootcamp.herokuapp.com/https://vpic.nhtsa.dot.gov/api/vehicles/getvehiclevariablelist"
-              data-valueKey="ID" data-displayKey="Name"></select>
-          </form>
-          <div id="variableResults"></div>
         </div>
+        <!-- ================================================================================================================================ -->
       </div>
-      <!-- ================================================================================================================================ -->
     </div>
-  </div>
-  <!--JQuery JS-->
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-  <!--Google Sign-in-->
-  <script src="https://apis.google.com/js/platform.js" async defer></script>
-  <!-- UIkit JS -->
-  <script src="https://cdn.jsdelivr.net/npm/uikit@3.3.1/dist/js/uikit.min.js"></script>
-  <script src="https://cdn.jsdelivr.net/npm/uikit@3.3.1/dist/js/uikit-icons.min.js"></script>
-  <script type="text/javascript" src="js/members.js"></script>
-  <script type="text/javascript" src="js/nhtsa.js"></script>
-  <script type="text/javascript" src="js/vinchecker.js"></script>
+    <!--JQuery JS-->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <!--Google Sign-in-->
+    <script src="https://apis.google.com/js/platform.js" async defer></script>
+    <!-- UIkit JS -->
+    <script src="https://cdn.jsdelivr.net/npm/uikit@3.3.1/dist/js/uikit.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/uikit@3.3.1/dist/js/uikit-icons.min.js"></script>
+    <script type="text/javascript" src="js/members.js"></script>
+    <script type="text/javascript" src="js/nhtsa.js"></script>
+    <script type="text/javascript" src="js/vinchecker.js"></script>
 </body>
 
 </html>

@@ -4,6 +4,8 @@ $(document).ready(function () {
 	//          directed to after logging in. Holds markers. 
 	//===========================================================================
 
+	var UIkit = require("./uikit.min.js");
+
 	// This file just does a GET request to figure out which user is logged in
 	// and updates the HTML on the page
 	$.get("/api/user_data").then(function (data) {
@@ -32,22 +34,30 @@ $(document).ready(function () {
 		$select.append("<option></option>");
 
 		$.ajax({
-			url: $select.attr("data-source"),
-		}).then(function (options) {
-			options.map(function (option) {
-				var $option = $("<option>");
-
-				$option
-					.val(option[$select.attr("data-valueKey")])
-					.text(option[$select.attr("data-displayKey")]);
-
-				$select.append($option);
-			});
+			url: "https://cors-ut-bootcamp.herokuapp.com/https://vpic.nhtsa.dot.gov/api/vehicles/getvehiclevariablelist",
+			method: "GET"
+		}).then(function (response) {
+			console.log(response);
+			for (var i = 0; i < response.Results.length; i++) {
+				const dropdown = response.Results[i].Name;
+				$("#vehicleVariables").text(dropdown);
+			}// When the user picks a vehicle variable, the definition of the variable is displayed in the div variableResults 
+			var vehicleDef = response.Results[i].Description;
+			$("#variableResults").html(vehicleDef);
 		});
 	});
 
-	// When the user picks a vehicle variable, the definition of the variable is displayed in the div variableResults
-
+	//========================================================== 
+	// 				Media Queries
+	var mql = window.matchMedia("screen and (maxwidth: 768px)");
+	mql.addListener(function (viewSize) {
+		if (viewSize.matches) {
+			UIkit.tooltip("title").show();
+		}
+		else {
+			console.log("Not on mobile");
+		}
+	});
 
 	//==========================================================
 
