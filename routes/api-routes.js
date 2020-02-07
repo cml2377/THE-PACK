@@ -1,6 +1,7 @@
 // Requiring our models and passport as we've configured it
 var db = require("../models");
 var passport = require("../config/passport");
+var axios = require("axios");
 
 module.exports = function (app) {
 	// Using the passport.authenticate middleware with our local strategy.
@@ -9,7 +10,6 @@ module.exports = function (app) {
 	app.post("/api/login", passport.authenticate("local"), function (req, res) {
 		res.json(req.user);
 	});
-
 	// Route for signing up a user. The user's password is automatically hashed and stored securely thanks to
 	// how we configured our Sequelize User Model. If the user is created successfully, proceed to log the user in,
 	// otherwise send back an error
@@ -46,4 +46,15 @@ module.exports = function (app) {
 			});
 		}
 	});
+	app.get("/api/events/cars", function (req, res) {
+
+		axios.get("https://maps.googleapis.com/maps/api/place/textsearch/json?query=car+events&key=" + process.env.google_api).then(function (response) {
+			res.json(response.data.results);
+
+		});
+
+		
+	});
+
+
 };
