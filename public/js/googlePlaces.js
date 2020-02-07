@@ -5,7 +5,7 @@ const googleDivEl = $("#googleDiv");
 $(googleBtnEl).on("click", function () {
   console.log("GOOOOOOOOOGLE");
   const settings = {
-    "url": "https://cors-ut-bootcamp.herokuapp.com/https://maps.googleapis.com/maps/api/place/textsearch/json?query=car+events&key=AIzaSyDfl4ckbrHuuNG0IdouW6Y70hrSxD1CMJE",
+    "url": "https://cors-ut-bootcamp.herokuapp.com/https://maps.googleapis.com/maps/api/place/textsearch/json?query=car+events&key=" + google_api,
     "method": "GET",
     "timeout": 0,
   };
@@ -24,7 +24,7 @@ $(googleBtnEl).on("click", function () {
       console.log(queryInput);
       //take the name and manipulate into another ajax call to get the url
       const query = {
-        "url": `https://cors-ut-bootcamp.herokuapp.com/https://maps.googleapis.com/maps/api/place/findplacefromtext/json?input=${queryInput}&inputtype=textquery&fields=url&key=AIzaSyDfl4ckbrHuuNG0IdouW6Y70hrSxD1CMJE`,
+        "url": `https://cors-ut-bootcamp.herokuapp.com/https://maps.googleapis.com/maps/api/place/findplacefromtext/json?input=${queryInput}&inputtype=textquery&fields=url&key=${google_api}`,
         "method": "GET",
         "timeout": 0,
       };
