@@ -33,11 +33,14 @@
             uk-toggle="target: #modal-center" uk-marker uk-tooltip="title: Hog n' Car Events!; pos: top"></a>
           <!-- VIN Marker -->
           <a class="uk-position-absolute uk-transform-center" style="left: 80%; top: 70%"
-            uk-toggle="target: #modal-right" uk-marker
-            uk-tooltip="title: Don't know the definition of a vehicle part? Click here!; pos: top-left"></a>
+            uk-toggle="target: #modal-right" uk-marker uk-tooltip="title: Find Vehicle by VIN; pos: top-left"></a>
           <!-- Recalls Marker -->
           <a class="uk-position-absolute uk-transform-center" style="left: 40%; top: 50%" uk-marker
             uk-tooltip="title: Check for recalls; pos: bottom" href="nhtsa.html" uk-marker></a>
+          <!-- Definition Marker -->
+          <a class="uk-position-absolute uk-transform-center" style="left: 75%; top: 30%"
+            uk-toggle="target: #modal-bottom" uk-marker
+            uk-tooltip="title: Don't know the definition of a vehicle part? Click here!; pos: top-left"></a>
           <!-- ======================================================================================================================== -->
           <!-- The name of our app -->
           <h1 class="uk-heading-line uk-text-center" style="font-family: 'Poiret One', cursive; font-size: 5rem;">
@@ -110,7 +113,7 @@
               <span class="uk-search-icon-flip" uk-search-icon></span>
               <input class="uk-search-input" type="search" placeholder="Search by location...">
             </form>
-            <button id="googleBtn" type="submit">Submit</button>
+            <button id="googleBtn" class="uk-button uk-button-default demo" type="submit">Submit</button>
           </div>
           <div id="googleDiv">
 
@@ -118,8 +121,25 @@
         </div>
       </div>
 
-      <!-- Define vehicle variable modal -->
+      <!-- Find vehicles here -->
       <div id="modal-right" class="uk-flex-top" uk-modal>
+        <div class="uk-modal-dialog uk-modal-body uk-margin-auto-vertical">
+          <button class="uk-modal-close-default" type="button" uk-close></button>
+          <div class="uk-modal-header">
+            <h2 class="uk-modal-title">Search for vehicles by their VIN number!</h2>
+          </div>
+          <form>
+            <input id="vin-input" class="uk-input" type="text">
+          </form>
+          <button class="uk-button uk-button-default demo vin-search" type="button"
+            onclick="UIkit.notification({message: '<span uk-icon=\'icon: check\'></span> Searching for vehicle!'})">Submit</button>
+          <button class="uk-button uk-button-default demo add-to-favorites" type="button">Add to Favorites!</button>
+          <div id="vehicle-display"></div>
+        </div>
+      </div>
+
+      <!-- Define vehicle variable modal -->
+      <div id="modal-bottom" class="uk-flex-top" uk-modal>
         <div class="uk-modal-dialog uk-modal-body uk-margin-auto-vertical">
 
           <button class="uk-modal-close-default" type="button" uk-close></button>
@@ -127,13 +147,11 @@
             <h2 class="uk-modal-title">Vehicle Definitions</h2>
           </div>
           <form>
-            <select id="vehicleVariables" class="uk-input" type="text"></select>
+            <select id="vehicleVariables" class="uk-select"
+              data-source="https://cors-ut-bootcamp.herokuapp.com/https://vpic.nhtsa.dot.gov/api/vehicles/getvehiclevariablelist"
+              data-valueKey="ID" data-displayKey="Name"></select>
           </form>
-
-          <button class="uk-button uk-button-default demo vin-search" type="button"
-            onclick="UIkit.notification({message: '<span uk-icon=\'icon: check\'></span> Searching for vehicle!'})">Submit</button>
-          <button class="uk-button uk-button-default demo add-to-favorites" type="button">Add to Favorites!</button>
-          <div id="vehicle-display"></div>
+          <div id="variableResults"></div>
         </div>
       </div>
       <!-- ================================================================================================================================ -->
