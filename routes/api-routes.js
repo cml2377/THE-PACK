@@ -48,6 +48,7 @@ module.exports = function (app) {
 	});
 	app.get("/api/events/cars", function (req, res) {
 
+		
 		axios.get("https://maps.googleapis.com/maps/api/place/textsearch/json?query=car+events&key=" + process.env.google_api).then(function (response) {
 			res.json(response.data.results);
 
