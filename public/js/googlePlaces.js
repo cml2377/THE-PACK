@@ -5,7 +5,7 @@ const googleDivEl = $("#googleDiv");
 $(googleBtnEl).on("click", function(){
   console.log("GOOOOOOOOOGLE");
   var settings = {
-    "url": "https://cors-ut-bootcamp.herokuapp.com/https://maps.googleapis.com/maps/api/place/textsearch/json?query=car+events&key=google_api_key",
+    "url": "https://cors-ut-bootcamp.herokuapp.com/https://maps.googleapis.com/maps/api/place/textsearch/json?query=car+events&keyAIzaSyDfl4ckbrHuuNG0IdouW6Y70hrSxD1CMJE",
     "method": "GET",
     "timeout": 0,
   };
