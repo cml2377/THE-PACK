@@ -13,12 +13,9 @@
 </head>
 
 <body>
-
   <div class="uk-animation-fade">
     <!-- ================================================================================================================================ -->
-
     <!-- We may have to add the background image to the html to add the markers. https://getuikit.com/docs/marker -->
-
     <!-- Example from UI Kit. -->
     <div class="uk-inline uk-background-cover uk-light">
       <div class="contentBox" style="margin: 0 auto;">
@@ -33,8 +30,7 @@
             uk-toggle="target: #modal-center" uk-marker uk-tooltip="title: Hog n' Car Events!; pos: top"></a>
           <!-- VIN Marker -->
           <a class="uk-position-absolute uk-transform-center" style="left: 80%; top: 70%"
-            uk-toggle="target: #modal-right" uk-marker
-            uk-tooltip="title: Don't know the definition of a vehicle part? Click here!; pos: top-left"></a>
+            uk-toggle="target: #modal-right" uk-marker uk-tooltip="title: Find Vehicle by VIN; pos: top-left"></a>
           <!-- Recalls Marker -->
           <a class="uk-position-absolute uk-transform-center" style="left: 40%; top: 50%" uk-marker
             uk-tooltip="title: Check for recalls; pos: bottom" href="nhtsa.html" uk-marker></a>
@@ -43,7 +39,6 @@
           <h1 class="uk-heading-line uk-text-center" style="font-family: 'Poiret One', cursive; font-size: 5rem;">
             <span>Colossal
               Hogs</span></h1>
-
           <!-- Toggles between car and motorcycle. -->
           <div id="toggleImg">
             <!-- Rounded switch -->
@@ -52,23 +47,19 @@
               <span class="slider round"></span>
             </label>
           </div>
-
         </div>
       </div>
       <!-- ================================================================================================================================ -->
-
       <!-- We can have modals for the uk-markers. -->
       <!-- Save favorite Vehicle in this modal. -->
       <div id="modal-left" class="uk-flex-top" uk-modal>
         <div class="uk-modal-dialog uk-modal-body uk-margin-auto-vertical">
-
           <button id="btn-left" class="uk-modal-close-default" type="button" uk-close></button>
           <div class="uk-modal-header">
             <h2 class="uk-modal-title">Save your favorite vehicles here</h2>
           </div>
           <!-- References Vehicles table (local database) -->
           <form class="uk-form-stacked">
-
             <div class="uk-margin">
               <div class="uk-form-label">Vehicle Type</div>
               <div class="uk-form-controls">
@@ -82,7 +73,6 @@
                 <input class="uk-input" id="form-stacked-text" type="text" placeholder="Ford, Yamaha...">
               </div>
             </div>
-
             <div class="uk-margin">
               <label class="uk-form-label" for="form-stacked-text">Model</label>
               <div class="uk-form-controls">
@@ -95,11 +85,9 @@
             onclick="UIkit.notification({message: '<span uk-icon=\'icon: check\'></span> Vehicle added to list!'})">Submit</button>
         </div>
       </div>
-
-      <!-- Google Search (outside API) -->
+      <!-- Eventbrite Search (outside API) -->
       <div id="modal-center" class="uk-flex-top" uk-modal>
         <div class="uk-modal-dialog uk-modal-body uk-margin-auto-vertical">
-
           <button class="uk-modal-close-default" type="button" uk-close></button>
           <div class="uk-modal-header">
             <h2 class="uk-modal-title">Find auto events near you</h2>
@@ -112,23 +100,19 @@
             </form>
             <button id="googleBtn" class="uk-button uk-button-default demo" type="button">Submit</button>
           <div id="googleDiv">
-
           </div>
         </div>
       </div>
-
-      <!-- Define vehicle variable modal -->
+      <!-- Find vehicles here -->
       <div id="modal-right" class="uk-flex-top" uk-modal>
         <div class="uk-modal-dialog uk-modal-body uk-margin-auto-vertical">
-
           <button class="uk-modal-close-default" type="button" uk-close></button>
           <div class="uk-modal-header">
-            <h2 class="uk-modal-title">Vehicle Definitions</h2>
+            <h2 class="uk-modal-title">Search for vehicles by their VIN number!</h2>
           </div>
           <form>
-            <select id="vehicleVariables" class="uk-input" type="text"></select>
+            <input id="vin-input" class="uk-input" type="text">
           </form>
-
           <button class="uk-button uk-button-default demo vin-search" type="button"
             onclick="UIkit.notification({message: '<span uk-icon=\'icon: check\'></span> Searching for vehicle!'})">Submit</button>
           <button class="uk-button uk-button-default demo add-to-favorites" type="button">Add to Favorites!</button>
@@ -140,18 +124,14 @@
   </div>
   <!--JQuery JS-->
   <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-  <!-- Axios Requests -->
-  <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+  <!--Google Sign-in-->
+  <script src="https://apis.google.com/js/platform.js" async defer></script>
   <!-- UIkit JS -->
   <script src="https://cdn.jsdelivr.net/npm/uikit@3.3.1/dist/js/uikit.min.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/uikit@3.3.1/dist/js/uikit-icons.min.js"></script>
   <script type="text/javascript" src="js/members.js"></script>
   <script type="text/javascript" src="js/nhtsa.js"></script>
   <script type="text/javascript" src="js/vinchecker.js"></script>
-  <script type="text/javascript" src="js/vehicle.js"></script>
-
-
-
 </body>
 
 </html>
