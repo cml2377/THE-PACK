@@ -33,7 +33,8 @@
             uk-toggle="target: #modal-center" uk-marker uk-tooltip="title: Hog n' Car Events!; pos: top"></a>
           <!-- VIN Marker -->
           <a class="uk-position-absolute uk-transform-center" style="left: 80%; top: 70%"
-            uk-toggle="target: #modal-right" uk-marker uk-tooltip="title: Find Vehicle by VIN; pos: top-left"></a>
+            uk-toggle="target: #modal-right" uk-marker
+            uk-tooltip="title: Don't know the definition of a vehicle part? Click here!; pos: top-left"></a>
           <!-- Recalls Marker -->
           <a class="uk-position-absolute uk-transform-center" style="left: 40%; top: 50%" uk-marker
             uk-tooltip="title: Check for recalls; pos: bottom" href="nhtsa.html" uk-marker></a>
@@ -104,7 +105,7 @@
             <h2 class="uk-modal-title">Find auto events near you</h2>
           </div>
           <!-- Search function -->
-          <div class="uk-margin">           
+          <div class="uk-margin">
             <form class="uk-search uk-search-default">
               <span class="uk-search-icon-flip" uk-search-icon></span>
               <input class="uk-search-input" type="search" placeholder="Search by location...">
@@ -112,21 +113,21 @@
             <button id="googleBtn" type="submit">Submit</button>
           </div>
           <div id="googleDiv">
-            
+
           </div>
         </div>
       </div>
 
-      <!-- Find vehicles here -->
+      <!-- Define vehicle variable modal -->
       <div id="modal-right" class="uk-flex-top" uk-modal>
         <div class="uk-modal-dialog uk-modal-body uk-margin-auto-vertical">
 
           <button class="uk-modal-close-default" type="button" uk-close></button>
           <div class="uk-modal-header">
-            <h2 class="uk-modal-title">Search for vehicles by their VIN number!</h2>
+            <h2 class="uk-modal-title">Vehicle Definitions</h2>
           </div>
           <form>
-            <input id="vin-input" class="uk-input" type="text">
+            <select id="vehicleVariables" class="uk-input" type="text"></select>
           </form>
 
           <button class="uk-button uk-button-default demo vin-search" type="button"
@@ -140,8 +141,8 @@
   </div>
   <!--JQuery JS-->
   <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-  <!--Google Sign-in-->
-  <script src="https://apis.google.com/js/platform.js" async defer></script>
+  <!-- Axios Requests -->
+  <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
   <!-- UIkit JS -->
   <script src="https://cdn.jsdelivr.net/npm/uikit@3.3.1/dist/js/uikit.min.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/uikit@3.3.1/dist/js/uikit-icons.min.js"></script>
