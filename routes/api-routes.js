@@ -46,4 +46,18 @@ module.exports = function (app) {
 			});
 		}
 	});
+
+	app.post("/api/favorites", function (req, res) {
+		db.Favorite.create({
+			category: req.body.category,
+			make: req.body.make,
+			model: req.body.model,
+			year: req.body.year,
+			series: req.body.series,
+			plant: req.body.plant
+		}).then(function (newFav) {
+			console.log(newFav);
+			res.json(newFav);
+		});
+	});
 };

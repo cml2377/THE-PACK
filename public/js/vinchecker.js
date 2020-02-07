@@ -10,7 +10,7 @@ $(".vin-search").click(function () {
 });
 
 favoritesBtn.click(function () {
-    console.log("clicked!");
+    postFavorite();
 });
 
 
@@ -33,7 +33,7 @@ var vinchecker = function (vin) {
                     series: response.Results[11].Value
                 };
                 html = `
-                    <h3 class = "vin-alert">Car found!</h3>
+                    <h3 class = "vin-alert" id = "vehicle-category">Car</h3>
                     <p class = "vehicle-info" id = "vehicle-make">${carSearch.make}</p>
                     <p class = "vehicle-info" id = "vehicle-model">${carSearch.model}</p>
                     <p class = "vehicle-info" id = "vehicle-year">${carSearch.year}</p>
@@ -55,7 +55,7 @@ var vinchecker = function (vin) {
                     series: response.Results[11].Value
                 };
                 html = `
-                    <h3 class = "vin-alert">Motorcycle found!</h3>
+                    <h3 class = "vin-alert" id = "vehicle-category">Motorcycle</h3>
                     <p class = "vehicle-info" id = "vehicle-make">${hogSearch.make}</p>
                     <p class = "vehicle-info" id = "vehicle-model">${hogSearch.model}</p>
                     <p class = "vehicle-info" id = "vehicle-year">${hogSearch.year}</p>
@@ -75,3 +75,23 @@ var vinchecker = function (vin) {
             console.log(error);
         });
 };
+
+function postFavorite() {
+    const fav = {
+        category: $("#vehicle-category").text(),
+        make: $("#vehicle-make").text(),
+        model: $("#vehicle-model").text(),
+        year: $("#vehicle-year").text(),
+        plant: $("#vehicle-plant").text(),
+        series: $("#vehicle-series").text()
+    };
+    console.log(fav);
+    $.ajax({
+        method: "POST",
+        fav,
+        url: "/api/favorites"
+    })
+        .then(function () {
+            console.log("Favorite posted!");
+        });
+}
