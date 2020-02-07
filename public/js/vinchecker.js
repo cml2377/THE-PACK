@@ -13,8 +13,6 @@ favoritesBtn.click(function () {
     postFavorite();
 });
 
-
-
 var vinchecker = function (vin) {
     var queryURL = `https://vpic.nhtsa.dot.gov/api/vehicles/decodevin/${vin}?format=json`;
     $.ajax({
@@ -86,11 +84,7 @@ function postFavorite() {
         series: $("#vehicle-series").text()
     };
     console.log(fav);
-    $.ajax({
-        method: "POST",
-        fav: fav,
-        url: "/api/favorites"
-    })
+    $.post("/api/favorites", fav)
         .then(function () {
             console.log("Favorite posted!");
         });

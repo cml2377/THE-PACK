@@ -4,7 +4,9 @@ $(document).ready(function () {
 	//          directed to after logging in. Holds markers. 
 	//===========================================================================
 
+
 	var UIkit = require("./uikit.min.js");
+
 
 	// This file just does a GET request to figure out which user is logged in
 	// and updates the HTML on the page
@@ -30,6 +32,7 @@ $(document).ready(function () {
 	// Populate dropdown with list of part names
 	$("select[data-source]").each(function () {
 		var $select = $(this);
+
 
 		$select.append("<option></option>");
 
@@ -60,5 +63,6 @@ $(document).ready(function () {
 	});
 
 	//==========================================================
+
 
 });
