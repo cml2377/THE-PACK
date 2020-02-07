@@ -48,7 +48,7 @@ module.exports = function (app) {
 	});
 
 	app.post("/api/favorites", function (req, res) {
-		console.log(" Look" + req.body)
+		console.log(" Look" + req.body);
 		db.Favorite.create({
 			category: req.body.category,
 			make: req.body.make,
