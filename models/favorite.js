@@ -8,4 +8,4 @@ module.exports = function (sequelize, DataTypes) {
         series: DataTypes.STRING
     });
     return Favorites;
-}
+};

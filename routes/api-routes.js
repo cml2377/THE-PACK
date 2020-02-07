@@ -46,7 +46,6 @@ module.exports = function (app) {
 			});
 		}
 	});
-<<<<<<< HEAD
 
 	app.post("/api/favorites", function (req, res) {
 		db.Favorite.create({
@@ -61,7 +60,7 @@ module.exports = function (app) {
 			res.json(newFav);
 		});
 	});
-=======
+
 	app.get("/api/events/cars", function (req, res) {
 
 		axios.get("https://maps.googleapis.com/maps/api/place/textsearch/json?query=car+events&key=" + process.env.google_api).then(function (response) {
@@ -69,9 +68,8 @@ module.exports = function (app) {
 
 		});
 
-		
+
 	});
 
 
->>>>>>> master
 };
