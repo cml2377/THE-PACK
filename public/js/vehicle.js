@@ -13,7 +13,7 @@ $(googleBtnEl).on("click", function () {
       const ptagEl = $("<p>");
       ptagEl.text(places.name);
       googleDivEl.append(ptagEl);
-      console.log(places.photos)
+      console.log(places.photos);
     }
   });
 });
