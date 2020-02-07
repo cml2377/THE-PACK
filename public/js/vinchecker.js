@@ -88,7 +88,7 @@ function postFavorite() {
     console.log(fav);
     $.ajax({
         method: "POST",
-        fav,
+        fav: fav,
         url: "/api/favorites"
     })
         .then(function () {
