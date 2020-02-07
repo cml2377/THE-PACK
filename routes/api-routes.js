@@ -65,6 +65,10 @@ module.exports = function (app) {
 
 
 	app.get("/api/events/cars", function (req, res) {
+<<<<<<< HEAD
+=======
+
+>>>>>>> 9b0a6da3b9a318d6528d8662e4fcc6d7e6ea5b68
 		axios.get("https://maps.googleapis.com/maps/api/place/textsearch/json?query=car+events&key=" + process.env.google_api).then(function (response) {
 			res.json(response.data.results);
 		});
