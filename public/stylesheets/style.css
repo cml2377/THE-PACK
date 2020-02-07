@@ -130,3 +130,21 @@ input:checked + .slider:before {
   text-decoration: none;
   cursor: pointer;
 }
+
+/* The vehicle information <p> tags */
+.vehicle-info {
+  float:left;
+  margin: 20px;
+}
+
+.add-to-favorites {
+  display:none;
+  height: 40px;
+  float: right;
+}
+
+.vin-alert {
+  margin: 10px;
+  text-align: center;
+  font-style: italic;
+}
