@@ -47,11 +47,12 @@ module.exports = function (app) {
 		}
 	});
 
+
 	app.post("/api/favorites", function (req, res) {
 		console.log(" Look" + req.body);
 		db.Favorite.create({
 			category: req.body.category,
-			make: req.body.make,
+			make: req.body.make, 
 			model: req.body.model,
 			year: req.body.year,
 			series: req.body.series,
@@ -68,10 +69,5 @@ module.exports = function (app) {
 		axios.get("https://maps.googleapis.com/maps/api/place/textsearch/json?query=car+events&key=" + process.env.google_api).then(function (response) {
 			res.json(response.data.results);
 		});
-
-
 	});
-
-
-
 };
