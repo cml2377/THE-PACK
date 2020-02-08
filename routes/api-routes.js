@@ -10,6 +10,7 @@ module.exports = function (app) {
 	app.post("/api/login", passport.authenticate("local"), function (req, res) {
 		res.json(req.user);
 	});
+	
 	// Route for signing up a user. The user's password is automatically hashed and stored securely thanks to
 	// how we configured our Sequelize User Model. If the user is created successfully, proceed to log the user in,
 	// otherwise send back an error
@@ -47,7 +48,7 @@ module.exports = function (app) {
 		}
 	});
 
-	// Route that creates a new Favorite vehicle in the database.
+	// // Route that creates a new Favorite vehicle in the database.
 	app.post("/api/favorites", function (req, res) {
 		console.log(" Look" + req.body);
 		db.Favorite.create({
@@ -63,7 +64,7 @@ module.exports = function (app) {
 		});
 	});
 
-	// WIP -- Crystal
+	// // WIP -- Crystal
 	// Route that gets all favorite vehicles from database.
 	app.get("/api/favorites", function (req, res) {
 		var query = {};
