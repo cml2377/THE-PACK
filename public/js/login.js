@@ -13,7 +13,7 @@ $(document).ready(function () {
 		};
 
 		if (!userData.email || !userData.password) {
-			$("#loginBox").addClass(".uk-animation-shake");
+			// $("#loginBox").addClass(".uk-animation-shake");
 			return;
 		}
 
