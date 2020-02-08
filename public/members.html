@@ -23,14 +23,17 @@
           <!-- =========================================================================================================================== -->
           <!-- For these markers, we use modals that contain the information the user is looking for. https://getuikit.com/docs/visibility -->
           <!-- Each marker will display information about its contents upon hover. Save Favorite Vehicle Marker -->
+          <!-- =========================================================================================================================== -->
           <a class="uk-position-absolute uk-transform-center" style="left: 20%; top: 30%"
-            uk-toggle="target: #modal-left" uk-marker uk-tooltip="title: Save Favorite Car/Hog Here; pos: top-left"></a>
+            uk-toggle="target: #modal-left" uk-marker
+            uk-tooltip="title: List of Saved Hogs/Cars Here; pos: top-left"></a>
           <!-- Events Marker -->
           <a class="uk-position-absolute uk-transform-center" style="left: 60%; top: 40%"
             uk-toggle="target: #modal-center" uk-marker uk-tooltip="title: Hog n' Car Events!; pos: top"></a>
           <!-- VIN Marker -->
           <a class="uk-position-absolute uk-transform-center" style="left: 80%; top: 70%"
-            uk-toggle="target: #modal-right" uk-marker uk-tooltip="title: Find Vehicle by VIN; pos: top-left"></a>
+            uk-toggle="target: #modal-right" uk-marker
+            uk-tooltip="title: Find and Save a Vehicle by VIN; pos: top-left"></a>
           <!-- Recalls Marker -->
           <a class="uk-position-absolute uk-transform-center" style="left: 40%; top: 50%" uk-marker
             uk-tooltip="title: Check for recalls; pos: bottom" href="nhtsa.html" uk-marker></a>
@@ -40,9 +43,13 @@
             uk-tooltip="title: Don't know the definition of a vehicle part? Click here!; pos: top-left"></a>
           <!-- ======================================================================================================================== -->
           <!-- The name of our app -->
+          <!-- ======================================================================================================================== -->
           <h1 class="uk-heading-line uk-text-center" style="font-family: 'Poiret One', cursive; font-size: 5rem;">
             <span>Colossal
               Hogs</span></h1>
+          <h2 class="uk-text-center"
+            style="font-family: 'Poiret One', cursive; background-color: rgba(33,33,33,0.8); font-size: 1.2rem;">
+            <span>Hover over the markers for features.</span></h2>
           <!-- Toggles between car and motorcycle. -->
           <div id="toggleImg">
             <!-- Rounded switch -->
@@ -54,42 +61,25 @@
         </div>
       </div>
       <!-- ================================================================================================================================ -->
-      <!-- We can have modals for the uk-markers. -->
-      <!-- Save favorite Vehicle in this modal. -->
+      <!-- We have modals for the uk-markers. -->
+      <!-- ================================================================================================================================ -->
+      <!-- Pull saved vehicles from database. -->
+      <!-- The VIN marker allows the user to save vehicles to the Hog Database. -->
       <div id="modal-left" class="uk-flex-top" uk-modal>
         <div class="uk-modal-dialog uk-modal-body uk-margin-auto-vertical">
           <button id="btn-left" class="uk-modal-close-default" type="button" uk-close></button>
           <div class="uk-modal-header">
-            <h2 class="uk-modal-title">Save your favorite vehicles here</h2>
+            <h2 class="uk-modal-title">Favorite Cars and Hogs Saved</h2>
           </div>
           <!-- References Vehicles table (local database) -->
-          <form class="uk-form-stacked">
-            <div class="uk-margin">
-              <div class="uk-form-label">Vehicle Type</div>
-              <div class="uk-form-controls">
-                <label><input class="uk-radio" type="radio" name="radio1">Car</label><br>
-                <label><input class="uk-radio" type="radio" name="radio1">Motorcycle</label>
-              </div>
-            </div>
-            <div class="uk-margin">
-              <label class="uk-form-label" for="form-stacked-text">Make</label>
-              <div class="uk-form-controls">
-                <input class="uk-input" id="form-stacked-text" type="text" placeholder="Ford, Yamaha...">
-              </div>
-            </div>
-            <div class="uk-margin">
-              <label class="uk-form-label" for="form-stacked-text">Model</label>
-              <div class="uk-form-controls">
-                <input class="uk-input" id="form-stacked-text" type="text" placeholder="Mustang, Bolt...">
-              </div>
-            </div>
-          </form>
-          <!-- We can add a notification that fades away when user adds a favorite event or vehicle. https://getuikit.com/docs/notification -->
-          <button class="uk-button uk-button-default demo" type="button"
-            onclick="UIkit.notification({message: '<span uk-icon=\'icon: check\'></span> Vehicle added to list!'})">Submit</button>
+          <div id="listOfFaveVehicles">
+
+          </div>
         </div>
       </div>
-      <!-- Eventbrite Search (outside API) -->
+      <!-- =================================================================================================================================== -->
+      <!-- Google Places (outside API) -->
+      <!-- =================================================================================================================================== -->
       <div id="modal-center" class="uk-flex-top" uk-modal>
         <div class="uk-modal-dialog uk-modal-body uk-margin-auto-vertical">
           <button class="uk-modal-close-default" type="button" uk-close></button>
@@ -97,7 +87,7 @@
             <h2 class="uk-modal-title">Auto Events</h2>
           </div>
           <!-- Search function -->
-          <div class="uk-margin">          
+          <div class="uk-margin">
 
             <button id="googleBtn" class="uk-button uk-button-default demo" type="button">Auto Events near you</button>
 
@@ -105,8 +95,8 @@
             </div>
           </div>
         </div>
-
-        <!-- Find vehicles here -->
+        <!-- ================================================================================================================================== -->
+        <!-- Find vehicles modal here -->
         <div id="modal-right" class="uk-flex-top" uk-modal>
           <div class="uk-modal-dialog uk-modal-body uk-margin-auto-vertical">
             <button class="uk-modal-close-default" type="button" uk-close></button>
@@ -118,11 +108,14 @@
             </form>
             <button class="uk-button uk-button-default demo vin-search" type="button"
               onclick="UIkit.notification({message: '<span uk-icon=\'icon: check\'></span> Searching for vehicle!'})">Submit</button>
-            <button class="uk-button uk-button-default demo add-to-favorites" type="button">Add to Favorites!</button>
+            <button class="uk-button uk-button-default demo add-to-favorites" type="button"
+              onclick="UIkit.notification({message: '<span uk-icon=\'icon: check\'></span> Added to favorites list. Check it out!'})">Add
+              to Favorites</button>
             <div id="vehicle-display"></div>
           </div>
         </div>
 
+        <!-- ================================================================================================================================= -->
         <!-- Define vehicle variable modal -->
         <div id="modal-bottom" class="uk-flex-top" uk-modal>
           <div class="uk-modal-dialog uk-modal-body uk-margin-auto-vertical">
