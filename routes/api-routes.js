@@ -32,7 +32,7 @@ module.exports = function (app) {
 		res.redirect("/");
 	});
 
-	// Route for getting some data about our user to be used client side
+	// Route for getting some data about our user to be used client side.
 	app.get("/api/user_data", function (req, res) {
 		if (!req.user) {
 			// The user is not logged in, send back an empty object
@@ -47,6 +47,7 @@ module.exports = function (app) {
 		}
 	});
 
+	// Route that creates a new Favorite vehicle in the database.
 	app.post("/api/favorites", function (req, res) {
 		console.log(" Look" + req.body);
 		db.Favorite.create({
@@ -62,8 +63,19 @@ module.exports = function (app) {
 		});
 	});
 
+	// WIP -- Crystal
+	// Route that gets all favorite vehicles from database.
+	app.get("/api/favorites", function (req, res) {
+		var query = {};
+		db.Post.findAll({
+			where: query,
+			include: [db.Author]
+		}).then(function (dbPost) {
+			res.json(dbPost);
+		});
+	});
 
-
+	// Route that gets auto events near the user.
 	app.get("/api/events/cars", function (req, res) {
 		axios.get("https://maps.googleapis.com/maps/api/place/textsearch/json?query=car+events&key=" + process.env.google_api).then(function (response) {
 			res.json(response.data.results);
