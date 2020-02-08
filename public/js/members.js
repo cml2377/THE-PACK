@@ -3,7 +3,6 @@ $(document).ready(function () {
 	//          The main page! This is the homepage the user is
 	//          directed to after logging in. Holds markers. 
 	//===========================================================================
-	
 
 	// This file just does a GET request to figure out which user is logged in
 	// and updates the HTML on the page
@@ -24,19 +23,44 @@ $(document).ready(function () {
 	dropdown.empty();
 
 	dropdown.append("<option>Define parts...</option>");
-	dropdown.prop("selectedIndex", 0);
-
-	const url = "https://vpic.nhtsa.dot.gov/api/vehicles/getvehiclevariablelist";
 
 	// Populate dropdown with list of part names
-	$.getJSON(url, function (data) {
-		$.each(data, function (key, entry) {
-			dropdown.append($("<option></option>").attr("value", entry.abbreviation).text(entry.name));
-		});
+
+	let userSelectedDesc = {};
+
+	$.ajax({
+		url: "https://cors-ut-bootcamp.herokuapp.com/https://vpic.nhtsa.dot.gov/api/vehicles/getvehiclevariablelist?format=json",
+		method: "GET"
+	}).then(function (response) {
+		for (var i = 0; i < response.Results.length; i++) {
+			const partName = response.Results[i].Name;
+			const ID = response.Results[i].ID;
+			$("#vehicleVariables").append("<option value=" + ID + ">" + partName + "</option>");
+			userSelectedDesc[ID] = response.Results[i].Description;
+		}
+	});
+
+	dropdown.change(function () {
+		// When the user picks a name, the explanation of the variable is displayed in the div variableResults. This is based on each option's value(ID). 
+		console.log(this.value);
+		var value = this.value;
+		$("#variableResults").empty().append(userSelectedDesc[value]);
+
+	});
+
+
+	//========================================================== 
+	// 				Media Queries
+	var mql = window.matchMedia("screen and (maxwidth: 768px)");
+	mql.addListener(function (viewSize) {
+		if (viewSize.matches) {
+			UIkit.tooltip("title").show();
+		}
+		else {
+			console.log("Not on mobile");
+		}
 	});
 
 	//==========================================================
-
-
 
 });
