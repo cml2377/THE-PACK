@@ -51,15 +51,15 @@ $(document).ready(function () {
 
 	// ========================================================== 
 					// Media Queries
-	var mql = window.matchMedia("screen and (maxwidth: 768px)");
-	mql.addListener(function (viewSize) {
-		if (viewSize.matches) {
-			UIkit.tooltip("title").show();
-		}
-		else {
-			console.log("Not on mobile");
-		}
-	});
+	// var mql = window.matchMedia("screen and (maxwidth: 768px)");
+	// mql.addListener(function (viewSize) {
+	// 	if (viewSize.matches) {
+	// 		UIkit.tooltip("title").show();
+	// 	}
+	// 	else {
+	// 		console.log("Not on mobile");
+	// 	}
+	// });
 
 	//==========================================================
 
