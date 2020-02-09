@@ -189,28 +189,35 @@ function recallSearch(make, model, year) {
 
 
         .then(function (response) {
-            var data = {
-                modelYear: response.data.Results[0].ModelYear,
-                make: response.data.Results[0].Make,
-                model: response.data.Results[0].Model,
-                component: response.data.Results[0].Component,
-                summary: response.data.Results[0].Summary,
-                remedy: response.data.Results[0].Remedy
+            // var data = {
+            //     modelYear: response.data.Results[0].ModelYear,
+            //     make: response.data.Results[0].Make,
+            //     model: response.data.Results[0].Model,
+            //     component: response.data.Results[0].Component,
+            //     summary: response.data.Results[0].Summary,
+            //     remedy: response.data.Results[0].Remedy
 
-            }
+            // }
             // var recall = response.results;
             //         // summary = response.data.Results[5].Value;
             //     //     // consequence = response.data.Results[6].Value;
             //     //     // remedy = response.data.Results[7].Value;
-            let batman = `<p class = "recallInfo">${response.data.Results[0].ModelYear}</p>
-                            <p class = "recallInfo">${response.data.Results[0].Make}</p>
-                            <p class = "recallInfo">${response.data.Results[0].Model}</p>
-                            <p class = "recallInfo">${response.data.Results[0].Component}</p>
-                            <p class = "recallInfo">${response.data.Results[0].Summary}</p>
-                            <p class = "recallInfo">${response.data.Results[0].Remedy}</p>`;
+            for (let index = 0; index < response.data.Results.length; index++) {
+                const recall = response.data.Results[index];
 
+                let batman = `
+                <div>
+                <p class = "recallInfo">${recall.ModelYear}</p>
+                <p class = "recallInfo">${recall.Make}</p>
+                <p class = "recallInfo">${recall.Model}</p>
+                <p class = "recallInfo">${recall.Component}</p>
+                <p class = "recallInfo">${recall.Summary}</p>
+                <p class = "recallInfo">${recall.Remedy}</p>
+                </div>`;
 
-            $("#recallResults").append(batman);
+                $("#recallResults").append(batman);
+            }
+
 
             // });
         });
