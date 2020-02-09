@@ -9,24 +9,29 @@ $(document).ready(function () {
     function recallSearch(make, model, year) {
 
         $.ajax({
-            url: `https://one.nhtsa.gov/webapi/api/Recalls/vehicle/modelyear/${year}/make/${make}/model/${model}?format=json`,
+            url: `https://cors-ut-bootcamp.herokuapp.com/https://one.nhtsa.gov/webapi/api/Recalls/vehicle/modelyear/${year}/make/${make}/model/${model}?format=json`,
             type: "GET",
-            dataType: "JSON",
         }).done(function (response) {
             $("#recallResults").empty();
-            for (let index = 0; index < response.data.Results.length; index++) {
-                const recall = response.data.Results[index];
-                let batman = `
+            console.log(response);
+            if (response.Count == 0) {
+                $("#recallResults").append("No recalls found.");
+            } else {
+                for (let index = 0; index < response.Results.length; index++) {
+                    const recall = response.Results[index];
+                    let batman = `
                 <div>
                 <p class = "recallInfo">Year: ${recall.ModelYear}</p>
                 <p class = "recallInfo">Make: ${recall.Make}</p>
                 <p class = "recallInfo">Model: ${recall.Model}</p>
                 <p class = "recallInfo">Recalled Part: ${recall.Component}</p>
                 <p class = "recallInfo">Summary: ${recall.Summary}</p>
-                <p class = "recallInfo">Solution: ${recall.Remedy}</p>
+                <p class = "recallInfo">Solution: ${recall.Remedy}</p> <hr>
                 </div>`;
-                $("#recallResults").append(batman);
+                    $("#recallResults").append(batman);
+                }
             }
+
         });
     }
 });

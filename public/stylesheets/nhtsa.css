@@ -4,4 +4,12 @@
     padding-left: 2%;
     padding-right: 2%;
     background-color: rgba(26, 26, 26, 0.829);
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+}
+
+#recallResults {
+    height: 600px;
+    overflow-y: auto;
 }
