@@ -161,19 +161,18 @@
 //     console.log(res, "You"ve made a response!");
 // })
 
-const axios = require("axios");
 
 // const ajax = require("ajax");
 
 $(".recallSearch-btn").click(function () {
-    var data = [$("#userYear").val();
-    console.log(data);
-    recallSearch(data);
+    // var data = $("#userYear").val();
+    // console.log(data);
+    var make = $("#userMake").val();
+    var model = $("#userModel").val();
+    var year = $("#userYear").val();
+    recallSearch(make, model, year);
 });
 
-var make = $("#userMake").text();
-var model = $("#userModel.text()
-var year = $("#yearInput").val()
 // let ({"year"}) = userYear;//get this from the front end 
 // // select1 = ({ year });
 // let {"make"} = userMake
@@ -183,33 +182,40 @@ var year = $("#yearInput").val()
 // var response = "https://one.nhtsa.gov/webapi/api/Recalls/vehicle/modelyear/2017/make/infiniti/model/q50?format=json";
 
 
-function recallSearch() {
+function recallSearch(make, model, year) {
     // axios.get("https://one.nhtsa.gov/webapi/api/Recalls/vehicle/modelyear/2017/make/infiniti/model/q50?format=json")    
-    // axios.get(`https://cors-ut-bootcamp.herokuapp.com/https://one.nhtsa.gov/webapi/api/Recalls/vehicle/modelyear/${year}/make/${make}/model/${model}?format=json`)
-    axios.get("https://one.nhtsa.gov/webapi/api/Recalls/vehicle/modelyear/2017/make/infiniti/model/q50?format=json")
+    axios.get(`https://cors-ut-bootcamp.herokuapp.com/https://one.nhtsa.gov/webapi/api/Recalls/vehicle/modelyear/${year}/make/${make}/model/${model}?format=json`)
+        // axios.get("https://one.nhtsa.gov/webapi/api/Recalls/vehicle/modelyear/2017/make/infiniti/model/q50?format=json")
 
 
         .then(function (response) {
+            var data = {
+                modelYear: response.data.Results[0].ModelYear,
+                make: response.data.Results[0].Make,
+                model: response.data.Results[0].Model,
+                component: response.data.Results[0].Component,
+                summary: response.data.Results[0].Summary,
+                remedy: response.data.Results[0].Remedy
 
+            }
             // var recall = response.results;
             //         // summary = response.data.Results[5].Value;
             //     //     // consequence = response.data.Results[6].Value;
             //     //     // remedy = response.data.Results[7].Value;
-            console.log(response.data.Results[0].ModelYear);
-            console.log(response.data.Results[0].Make);
-            console.log(response.data.Results[0].Model);
-            console.log(response.data.Results[0].Component);
-            console.log(response.data.Results[0].Summary);
-            console.log(response.data.Results[0].Remedy);
+            let batman = `<p class = "recallInfo">${response.data.Results[0].ModelYear}</p>
+                            <p class = "recallInfo">${response.data.Results[0].Make}</p>
+                            <p class = "recallInfo">${response.data.Results[0].Model}</p>
+                            <p class = "recallInfo">${response.data.Results[0].Component}</p>
+                            <p class = "recallInfo">${response.data.Results[0].Summary}</p>
+                            <p class = "recallInfo">${response.data.Results[0].Remedy}</p>`;
 
 
-
-
+            $("#recallResults").append(batman);
 
             // });
         });
 }
-recallSearch();
+
 
 
 // $.ajax({
