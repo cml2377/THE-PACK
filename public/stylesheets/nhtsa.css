@@ -4,4 +4,16 @@
     padding-left: 2%;
     padding-right: 2%;
     background-color: rgba(26, 26, 26, 0.829);
+    display: flex;
+    flex-direction: column;
+    max-width: 70%;
+}
+
+#formDiv {
+    height: 500px;
+}
+
+#recallResults {
+    height: 250px;
+    overflow-y: auto;
 }

@@ -7,8 +7,11 @@
   <title>Recalls - Colossal Hogs and Cars</title>
   <!-- Icon -->
   <link rel="icon" href="./img/noun_Flying Pig.png">
-  <!-- UIKit CSS Framework -->
-  <link rel="stylesheet" href="stylesheets/uikit.min.css" />
+  <!-- UIkit CSS -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/uikit@3.3.1/dist/css/uikit.min.css" />
+  <!-- UIkit JS -->
+  <script src="https://cdn.jsdelivr.net/npm/uikit@3.3.1/dist/js/uikit.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/uikit@3.3.1/dist/js/uikit-icons.min.js"></script>
   <!-- Google Fonts -->
   <link href="https://fonts.googleapis.com/css?family=Poiret+One&display=swap" rel="stylesheet">
   <!-- In-house CSS -->
@@ -47,98 +50,96 @@
   <!-- IDs for Year, Make, Model selection: userYear, userMake, userModel -->
   <div class="uk-overlay uk-overlay-default uk-position-center" id="nhtsaBox">
     <!-- The name of the page -->
-    <h1 class="uk-heading-line uk-text-center" style="font-family: 'Poiret One', cursive; font-size: 5rem;">
-      <span>Recall Search Engine</span></h1>
-    <div class="uk-form-stacked">
+    <div id="formDiv">
+      <h1 class="uk-heading-line uk-text-center" style="font-family: 'Poiret One', cursive; font-size: 5rem;">
+        <span>Recall Search Engine</span></h1>
+      <div class="uk-form-stacked">
 
-      <div class="uk-margin">
-        <label class="uk-form-label" for="userMake">Select Make</label>
-        <div class="uk-form-controls">
-          <select class="uk-select" id="userMake">
-            <option>Acura</option>
-            <option>Alfa Romeo</option>
-            <option>Aston Martin</option>
-            <option>Audi</option>
-            <option>Bentley</option>
-            <option>BMW</option>
-            <option>Buick</option>
-            <option>Cadillac</option>
-            <option>Chevrolet</option>
-            <option>Chrysler</option>
-            <option>Dodge</option>
-            <option>Ferrari</option>
-            <option>FIAT</option>
-            <option>Ford</option>
-            <option>Genesis</option>
-            <option>GMC</option>
-            <option>Honda</option>
-            <option>Hyundai</option>
-            <option>Infiniti</option>
-            <option>Jaguar</option>
-            <option>Jeep</option>
-            <option>Kia</option>
-            <option>Lamborghini</option>
-            <option>Land Rover</option>
-            <option>Lexus</option>
-            <option>Lincoln</option>
-            <option>Lotus</option>
-            <option>Maserati</option>
-            <option>Mazda</option>
-            <option>McLaren</option>
-            <option>Mercedes-Benz</option>
-            <option>Mini</option>
-            <option>Mitsubishi</option>
-            <option>Nissan</option>
-            <option>Porsche</option>
-            <option>Ram</option>
-            <option>Rivian</option>
-            <option>Rolls-Royce</option>
-            <option>Smart</option>
-            <option>Subaru</option>
-            <option>Tesla</option>
-            <option>Toyota</option>
-            <option>Volkswagen</option>
-            <option>Volvo</option>
-          </select>
-        </div>
-      </div>
-
-      <div class="uk-margin">
-        <label class="uk-form-label" for="userModel">Input Model</label>
         <div class="uk-margin">
-          <input id="userModel" class="uk-input" type="text" placeholder="Input model of car">
+          <label class="uk-form-label" for="userMake">Select Make</label>
+          <div class="uk-form-controls">
+            <select class="uk-select" id="userMake">
+              <option>Acura</option>
+              <option>Alfa Romeo</option>
+              <option>Aston Martin</option>
+              <option>Audi</option>
+              <option>Bentley</option>
+              <option>BMW</option>
+              <option>Buick</option>
+              <option>Cadillac</option>
+              <option>Chevrolet</option>
+              <option>Chrysler</option>
+              <option>Dodge</option>
+              <option>Ferrari</option>
+              <option>FIAT</option>
+              <option>Ford</option>
+              <option>Genesis</option>
+              <option>GMC</option>
+              <option>Honda</option>
+              <option>Hyundai</option>
+              <option>Infiniti</option>
+              <option>Jaguar</option>
+              <option>Jeep</option>
+              <option>Kia</option>
+              <option>Lamborghini</option>
+              <option>Land Rover</option>
+              <option>Lexus</option>
+              <option>Lincoln</option>
+              <option>Lotus</option>
+              <option>Maserati</option>
+              <option>Mazda</option>
+              <option>McLaren</option>
+              <option>Mercedes-Benz</option>
+              <option>Mini</option>
+              <option>Mitsubishi</option>
+              <option>Nissan</option>
+              <option>Porsche</option>
+              <option>Ram</option>
+              <option>Rivian</option>
+              <option>Rolls-Royce</option>
+              <option>Smart</option>
+              <option>Subaru</option>
+              <option>Tesla</option>
+              <option>Toyota</option>
+              <option>Volkswagen</option>
+              <option>Volvo</option>
+            </select>
+          </div>
+        </div>
+
+        <div class="uk-margin">
+          <label class="uk-form-label" for="userModel">Input Model</label>
+          <div class="uk-margin">
+            <input id="userModel" class="uk-input" type="text" placeholder="Input model of car">
+          </div>
+        </div>
+
+        <div class="uk-margin">
+          <label class="uk-form-label" for="userYear">Input Year</label>
+          <div class="uk-margin"><input id="userYear" class="uk-input" type="text" placeholder="Input year of vehicle"
+              data-uk-datepicker="{format:'YYYY'}"></div>
+
+        </div>
+
+        <div class="uk-margin-bottom">
+          <button type="submit" id="nhtsa-btn"
+            class="uk-button uk-button-primary uk-border-pill uk-width-1-1">SUBMIT</button>
         </div>
       </div>
-
-      <div class="uk-margin">
-        <label class="uk-form-label" for="userYear">Input Year</label>
-        <div class="uk-margin"><input id="yearInput" class="uk-input" type="text" placeholder="Input year of vehicle"
-            data-uk-datepicker="{format:'YYYY'}"></div>
-
-      </div>
-
-      <div class="uk-margin-bottom">
-        <button type="submit"
-          class="recallSearch-btn uk-button uk-button-primary uk-border-pill uk-width-1-1">SUBMIT</button>
-      </div>
+      <!-- Links that bring user back to members.html. -->
+      <p uk-margin>
+        <a class="uk-button uk-button-default" href="members.html">Back</a>
+      </p>
     </div>
-    <!-- Links that bring user back to members.html. -->
-    <p uk-margin>
-      <a class="uk-button uk-button-default" href="members.html">Back</a>
-    </p>
+    <!-- End of form div -->
+    <!-- Returns Recalls -->
+    <div class="uk-overflow-auto .uk-responsive-height" id="recallResults"></div>
+
   </div>
-  </form>
-
-  <!-- Returns Recalls -->
-
-
-  <!-- UIKit JS -->
-  <script src="js/uikit.min.js"></script>
-  <script src="js/uikit-icons.min.js"></script>
   <!-- jQuery JS -->
   <script src="https://code.jquery.com/jquery.js"></script>
   <!-- Code to the JavaScript File -->
-  <script src="nhtsa.js"></script>
+  <script src="js/nhtsa.js"></script>
 
 </body>
 
