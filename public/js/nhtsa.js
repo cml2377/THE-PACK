@@ -8,7 +8,11 @@ $(document).ready(function () {
 
     function recallSearch(make, model, year) {
 
-        $.ajax(`https://cors-ut-bootcamp.herokuapp.com/https://one.nhtsa.gov/webapi/api/Recalls/vehicle/modelyear/${year}/make/${make}/model/${model}?format=json`).done(function (response) {
+        $.ajax({
+            url: `https://one.nhtsa.gov/webapi/api/Recalls/vehicle/modelyear/${year}/make/${make}/model/${model}?format=json`,
+            type: "GET",
+            dataType: "JSON",
+        }).done(function (response) {
             for (let index = 0; index < response.data.Results.length; index++) {
                 const recall = response.data.Results[index];
                 let batman = `
@@ -20,7 +24,7 @@ $(document).ready(function () {
                 <p class = "recallInfo">Summary: ${recall.Summary}</p>
                 <p class = "recallInfo">Solution: ${recall.Remedy}</p>
                 </div>`;
-                $("#recallResults").append(batman);
+                $("#recallResults").empty().append(batman);
             }
         });
     }
