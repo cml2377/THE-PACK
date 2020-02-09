@@ -1,5 +1,5 @@
 $(document).ready(function () {
-    $(".recallSearch-btn").click(function () {
+    $("#nhtsa-btn").click(function () {
         var make = $("#userMake").val();
         var model = $("#userModel").val();
         var year = $("#userYear").val();
@@ -13,12 +13,12 @@ $(document).ready(function () {
                 const recall = response.data.Results[index];
                 let batman = `
                 <div>
-                <p class = "recallInfo">${recall.ModelYear}</p>
-                <p class = "recallInfo">${recall.Make}</p>
-                <p class = "recallInfo">${recall.Model}</p>
-                <p class = "recallInfo">${recall.Component}</p>
-                <p class = "recallInfo">${recall.Summary}</p>
-                <p class = "recallInfo">${recall.Remedy}</p>
+                <p class = "recallInfo">Year: ${recall.ModelYear}</p>
+                <p class = "recallInfo">Make: ${recall.Make}</p>
+                <p class = "recallInfo">Model: ${recall.Model}</p>
+                <p class = "recallInfo">Recalled Part: ${recall.Component}</p>
+                <p class = "recallInfo">Summary: ${recall.Summary}</p>
+                <p class = "recallInfo">Solution: ${recall.Remedy}</p>
                 </div>`;
                 $("#recallResults").append(batman);
             }
