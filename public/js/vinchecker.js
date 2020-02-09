@@ -100,17 +100,12 @@ favoritesMarker.click(function () {
         console.log(res);
         for (var i = 0; i < data.length; i++) {
             const ptagEl = $("<p>");
-            ptagEl.text(data[i]);
+            // const removeBtn = $("<button>");
+            ptagEl.text("Make: " + data[i].make + " Model: " + data[i].model + " Year: " + data[i].year);
             faveVehiclesEl.append(ptagEl);
+
         }
-        //data[i].what I want to display on page for Favorites
+       
     });
-//         var rowsToAdd = [];
-//         for (var i = 0; i < data.length; i++) {
-//             rowsToAdd.push(createAuthorRow(data[i]));
-//         }
-//         renderAuthorList(rowsToAdd);
-//         nameInput.val("");
-//     });
-// });
+//  
 });
