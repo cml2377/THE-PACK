@@ -6,10 +6,14 @@
     background-color: rgba(26, 26, 26, 0.829);
     display: flex;
     flex-direction: column;
-    overflow: hidden;
+    max-width: 70%;
+}
+
+#formDiv {
+    height: 500px;
 }
 
 #recallResults {
-    height: 600px;
+    height: 250px;
     overflow-y: auto;
 }
