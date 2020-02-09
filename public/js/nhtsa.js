@@ -24,7 +24,7 @@ $(document).ready(function () {
                 <p class = "recallInfo">Summary: ${recall.Summary}</p>
                 <p class = "recallInfo">Solution: ${recall.Remedy}</p>
                 </div>`;
-                $("#recallResults").empty().append(batman);
+                $("#recallResults").append(batman);
             }
         });
     }
