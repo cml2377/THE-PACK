@@ -28,7 +28,8 @@ $(document).ready(function () {
 			email: email,
 			password: password
 		})
-			.then(function () {
+			.then(function (data) {
+				console.log(data);
 				window.location.replace("/members");
 				// If there's an error, handle it by throwing up a bootstrap alert
 			})
