@@ -13,6 +13,7 @@ $(document).ready(function () {
             type: "GET",
             dataType: "JSON",
         }).done(function (response) {
+            $("#recallResults").empty();
             for (let index = 0; index < response.data.Results.length; index++) {
                 const recall = response.data.Results[index];
                 let batman = `
