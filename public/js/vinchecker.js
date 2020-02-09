@@ -1,6 +1,9 @@
 let car = {};
 let motorcycle = {};
 const favoritesBtn = $(".add-to-favorites");
+const favoritesMarker = $("#favoritesMarker");
+const faveVehiclesEl = $("#listOfFaveVehicles");
+
 let html;
 
 $(".vin-search").click(function () {
@@ -81,7 +84,7 @@ function postFavorite() {
         model: $("#vehicle-model").text(),
         year: $("#vehicle-year").text(),
         plant: $("#vehicle-plant").text(),
-        series: $("#vehicle-series").text()
+        series: $("#vehicle-series").text()        
     };
     console.log(fav);
     $.post("/api/favorites", fav)
@@ -89,3 +92,25 @@ function postFavorite() {
             console.log("Favorite posted!");
         });
 }
+
+favoritesMarker.click(function () {
+    console.log("HELLO");
+    $.get("/api/favorites", function (data, res) {
+        // console.log(req);
+        console.log(res);
+        for (var i = 0; i < data.length; i++) {
+            const ptagEl = $("<p>");
+            ptagEl.text(data[i]);
+            faveVehiclesEl.append(ptagEl);
+        }
+        //data[i].what I want to display on page for Favorites
+    });
+//         var rowsToAdd = [];
+//         for (var i = 0; i < data.length; i++) {
+//             rowsToAdd.push(createAuthorRow(data[i]));
+//         }
+//         renderAuthorList(rowsToAdd);
+//         nameInput.val("");
+//     });
+// });
+});

@@ -64,17 +64,20 @@ module.exports = function (app) {
 		});
 	});
 
-	// // WIP -- Crystal
+	
 	// Route that gets all favorite vehicles from database.
 	app.get("/api/favorites", function (req, res) {
-		var query = {};
-		db.Post.findAll({
-			where: query,
-			include: [db.Author]
-		}).then(function (dbPost) {
-			res.json(dbPost);
+		
+		// console.log(req);
+		// console.log(res);
+		db.Favorite.findAll({}).then(function(newFav) {
+			
+			res.json(newFav);
 		});
 	});
+			
+	
+
 
 	// Route that gets auto events near the user.
 	app.get("/api/events/cars", function (req, res) {

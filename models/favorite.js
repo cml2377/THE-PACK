@@ -6,6 +6,7 @@ module.exports = function (sequelize, DataTypes) {
         year: DataTypes.INTEGER,
         plant: DataTypes.STRING,
         series: DataTypes.STRING
+       
     });
     return Favorites;
 };
