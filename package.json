@@ -1,7 +1,7 @@
 {
   "name": "thepackproject",
   "version": "1.0.0",
-  "description": "",
+  "description": "All in one site to save vehicles, check for recalls, and learn about vehicle terms.",
   "main": "server.js",
   "scripts": {
     "start": "node server.js",
