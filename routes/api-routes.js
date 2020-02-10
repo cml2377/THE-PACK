@@ -67,9 +67,6 @@ module.exports = function (app) {
 
 	// Route that gets all favorite vehicles from database.
 	app.get("/api/favorites", function (req, res) {
-
-		// console.log(req);
-		// console.log(res);
 		db.Favorite.findAll({}).then(function (newFav) {
 
 			res.json(newFav);
@@ -96,6 +93,12 @@ module.exports = function (app) {
 	app.get("/api/events/cars", function (req, res) {
 		axios.get("https://maps.googleapis.com/maps/api/place/textsearch/json?query=car+events&key=" + process.env.google_api).then(function (response) {
 			res.json(response.data.results);
+		});
+	});
+
+	app.delete("/api/favorites/:id", function (req, res) {
+		db.Favorite.destroy({ where: { id: req.params.id } }).then(function (dbFavorite) {
+			res.json(dbFavorite);
 		});
 	});
 };
