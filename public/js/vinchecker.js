@@ -84,7 +84,7 @@ function postFavorite() {
         model: $("#vehicle-model").text(),
         year: $("#vehicle-year").text(),
         plant: $("#vehicle-plant").text(),
-        series: $("#vehicle-series").text()        
+        series: $("#vehicle-series").text()
     };
     console.log(fav);
     $.post("/api/favorites", fav)
@@ -95,17 +95,18 @@ function postFavorite() {
 
 favoritesMarker.click(function () {
     console.log("HELLO");
+    faveVehiclesEl.empty();
     $.get("/api/favorites", function (data, res) {
         // console.log(req);
         console.log(res);
         for (var i = 0; i < data.length; i++) {
             const ptagEl = $("<p>");
             // const removeBtn = $("<button>");
-            ptagEl.text("Make: " + data[i].make + " Model: " + data[i].model + " Year: " + data[i].year);
+            ptagEl.text("Make: " + data[i].make + "\n" + " Model: " + data[i].model + " " + " Year: " + data[i].year + " " + "Series: " + data[i].series);
             faveVehiclesEl.append(ptagEl);
 
         }
-       
+
     });
-//  
+    //  
 });
