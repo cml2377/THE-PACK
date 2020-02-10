@@ -30,7 +30,7 @@ The second marker opens a new page that allows the user to search for car recall
 
 ## Built With
 
-* [Eventbrite](https://www.eventbrite.com/platform/api) - We used Eventbrite to find vehicle events.
+* [Google Places](https://developers.google.com/places/web-service/intro) - We used Google Places to find vehicle events.
 * [UI Kit](https://getuikit.com/docs/introduction) - We used UIkit CSS framework for a fully responsive website and design. 
 * [Unsplash](https://unsplash.com/t/animals) - We used copyright-free images from this site.
 * [NHTSA](https://vpic.nhtsa.dot.gov/api/) - We used National Highway Traffic Safety Administration's API to information on vehicle recalls.

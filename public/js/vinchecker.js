@@ -4,6 +4,7 @@ const favoritesBtn = $(".add-to-favorites");
 const favoritesMarker = $("#favoritesMarker");
 const faveVehiclesEl = $("#listOfFaveVehicles");
 
+
 let html;
 
 $(".vin-search").click(function () {
@@ -99,13 +100,13 @@ favoritesMarker.click(function () {
         // console.log(req);
         console.log(res);
         for (var i = 0; i < data.length; i++) {
-            const ptagEl = $("<p>");
-            // const removeBtn = $("<button>");
+            const ptagEl = $("<p>");           
             ptagEl.text("Make: " + data[i].make + " Model: " + data[i].model + " Year: " + data[i].year);
             faveVehiclesEl.append(ptagEl);
-
+            
         }
        
     });
 //  
 });
+
