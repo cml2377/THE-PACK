@@ -68,6 +68,11 @@ module.exports = function (app) {
 	// Route that gets all favorite vehicles from database.
 	app.get("/api/favorites", function (req, res) {
 
+<<<<<<< HEAD
+		// console.log(req);
+		// console.log(res);
+		db.Favorite.findAll({}).then(function (newFav) {
+=======
 		// console.log(req);
 		// console.log(res);
 		db.Favorite.findAll({}).then(function (newFav) {
@@ -76,7 +81,25 @@ module.exports = function (app) {
 		});
 	});
 
+	app.delete("/api/favorites:id", function (req, res) {
 
+		// console.log(req);
+		// console.log(res);
+		db.Favorite.destroy({
+			where: {
+				id: req.params.id
+			}
+		}).then(function (newFav) {
+>>>>>>> master
+
+			res.json(newFav);
+		});
+	});
+
+<<<<<<< HEAD
+
+=======
+>>>>>>> master
 
 
 	// Route that gets auto events near the user.

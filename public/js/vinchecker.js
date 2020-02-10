@@ -4,6 +4,7 @@ const favoritesBtn = $(".add-to-favorites");
 const favoritesMarker = $("#favoritesMarker");
 const faveVehiclesEl = $("#listOfFaveVehicles");
 
+
 let html;
 
 $(".vin-search").click(function () {
